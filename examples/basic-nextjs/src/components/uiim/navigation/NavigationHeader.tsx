@@ -18,12 +18,18 @@ interface NavigationLinkFields {
   id: string;
   linkText: { jsonValue: Field<string> };
   linkUrl: { jsonValue: LinkField };
+  linkTier?: { jsonValue: Field<string> };
+  hasDropdown?: { jsonValue: Field<boolean> };
 }
 
 interface NavigationHeaderDatasource {
   brandLogo: { jsonValue: ImageField };
   ctaLabel: { jsonValue: Field<string> };
   ctaLink: { jsonValue: LinkField };
+  requestProductsLink?: { jsonValue: LinkField };
+  loginLink?: { jsonValue: LinkField };
+  pseLink?: { jsonValue: LinkField };
+  searchLabel?: { jsonValue: Field<string> };
   // Optional header search slot — renders a typeahead in the nav row when
   // SearchIndex is filled on the datasource. Empty = no search box.
   searchIndex?: { jsonValue: Field<string> };
@@ -351,6 +357,97 @@ export const Minimal = ({ fields, params }: NavigationHeaderProps): JSX.Element 
       >
         <div className="mx-auto flex max-w-7xl items-center justify-center px-4 py-4 sm:px-6">
           <Logo brandLogo={brandLogo} />
+        </div>
+      </header>
+    </div>
+  );
+};
+
+/* Davivienda variant — two-tier utility and primary navigation */
+export const Davivienda = ({ fields, params, page }: NavigationHeaderProps): JSX.Element => {
+  const isEditing = page?.mode?.isEditing;
+  const [menuOpen, setMenuOpen] = useState(false);
+  const datasource = fields?.data?.datasource;
+
+  if (!datasource) return <NavigationHeaderDefaultComponent />;
+
+  const links = datasource.children?.results ?? [];
+  const tieredLinks = links.some((item) => item.linkTier?.jsonValue?.value);
+  const utilityLinks = tieredLinks
+    ? links.filter((item) => item.linkTier?.jsonValue?.value === 'utility')
+    : links.slice(0, 4);
+  const primaryLinks = tieredLinks
+    ? links.filter((item) => item.linkTier?.jsonValue?.value === 'primary')
+    : links.slice(4);
+  const requestProductsLink = datasource.requestProductsLink?.jsonValue ?? datasource.ctaLink?.jsonValue;
+  const loginLink = datasource.loginLink?.jsonValue;
+  const pseLink = datasource.pseLink?.jsonValue;
+
+  const renderLink = (item: NavigationLinkFields, className?: string) => (
+    <ContentSdkLink key={item.id} field={item.linkUrl?.jsonValue} className={className}>
+      <Text field={item.linkText?.jsonValue} tag="span" />
+      {item.hasDropdown?.jsonValue?.value && (
+        <svg className="ml-1 h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      )}
+    </ContentSdkLink>
+  );
+
+  return (
+    <div className={cn('component navigation-header navigation-header--davivienda', params.styles)} id={params.RenderingIdentifier}>
+      <header className="w-full font-[var(--brand-body-font)]">
+        <div className="hidden border-b border-[var(--brand-border)] bg-[var(--brand-bg)] text-[var(--brand-fg)] lg:block">
+          <div className="mx-auto flex h-[42px] max-w-[1216px] items-center justify-between px-4">
+            <nav aria-label="Audience navigation" className="flex items-center gap-10 text-base">
+              {utilityLinks.map((item, index) => renderLink(item, cn('inline-flex items-center whitespace-nowrap', index === 0 && 'font-bold text-[var(--brand-primary)]')))}
+            </nav>
+            <div className="flex items-center gap-7 text-base font-semibold">
+              {pseLink ? (
+                <ContentSdkLink field={pseLink} className="inline-flex items-center gap-2" />
+              ) : (
+                isEditing && <span className="is-empty-hint">PSE link</span>
+              )}
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--brand-accent)] text-xs font-bold text-[var(--brand-accent-foreground)]" aria-hidden="true">A</span>
+            </div>
+          </div>
+        </div>
+
+        <div style={{ background: 'linear-gradient(90deg, var(--brand-header-bg), var(--brand-primary))' }} className="text-[var(--brand-header-fg)]">
+          <div className="mx-auto flex h-[82px] max-w-[1216px] items-center gap-7 px-4">
+            <Logo brandLogo={datasource.brandLogo?.jsonValue} className="shrink-0 [&_img]:!h-[18px] [&_img]:!w-auto" />
+            <nav aria-label="Primary navigation" className="hidden flex-1 items-center gap-7 text-base font-bold lg:flex">
+              {primaryLinks.map((item) => renderLink(item, 'inline-flex items-center whitespace-nowrap transition-opacity hover:opacity-80'))}
+            </nav>
+            <div className="ml-auto hidden items-center gap-3 lg:flex">
+              {requestProductsLink ? (
+                <ContentSdkLink field={requestProductsLink} className="rounded-[var(--brand-button-radius)] border border-[var(--brand-header-fg)] px-5 py-2.5 text-sm font-bold" />
+              ) : (
+                isEditing && <span className="is-empty-hint">Products link</span>
+              )}
+              {loginLink ? (
+                <ContentSdkLink field={loginLink} className="rounded-[var(--brand-button-radius)] bg-[var(--brand-bg)] px-7 py-2.5 text-sm font-bold text-[var(--brand-fg)]" />
+              ) : (
+                isEditing && <span className="is-empty-hint">Login link</span>
+              )}
+              <button type="button" className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--brand-bg)] text-[var(--brand-fg)]" aria-label={datasource.searchLabel?.jsonValue?.value || 'Search'}>
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m20 20-3.5-3.5" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="ml-auto flex items-center gap-2 lg:hidden">
+              {loginLink ? (
+                <ContentSdkLink field={loginLink} className="rounded-[var(--brand-button-radius)] bg-[var(--brand-bg)] px-4 py-2 text-xs font-bold text-[var(--brand-fg)]" />
+              ) : (
+                isEditing && <span className="is-empty-hint">Login link</span>
+              )}
+              <MenuButton open={menuOpen} onClick={() => setMenuOpen((open) => !open)} />
+            </div>
+          </div>
+          <MobileMenu items={[...primaryLinks, ...utilityLinks]} open={menuOpen} onClose={() => setMenuOpen(false)} />
         </div>
       </header>
     </div>

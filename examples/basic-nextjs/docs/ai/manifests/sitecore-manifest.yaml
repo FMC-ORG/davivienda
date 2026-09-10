@@ -1,5 +1,5 @@
 generatedAt: "2026-03-20T09:00:00Z"
-lastUpdatedAt: "2026-09-10T15:02:00Z"
+lastUpdatedAt: "2026-09-10T16:38:27Z"
 lastUpdatedBy: "pi"
 
 project:
@@ -131,7 +131,7 @@ components:
     category: "Navigation"
     status: "complete"
     createdAt: "2026-03-25T12:30:00Z"
-    updatedAt: "2026-05-05T16:00:00Z"
+    updatedAt: "2026-09-10T16:22:00Z"
 
     react:
       filePath: "src/components/uiim/navigation/NavigationHeader.tsx"
@@ -141,6 +141,7 @@ components:
         - "Default"
         - "Transparent"
         - "Minimal"
+        - "Davivienda"
 
     templates:
       parent:
@@ -207,7 +208,7 @@ components:
       datasourceTemplatePath: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/NavigationHeaderData"
       datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='NavigationHeaderData Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='NavigationHeaderData Folder']"
       parametersTemplateId: "{2072AD97-A552-49A4-A417-2C8F40C52F9A}"
-      componentQuery: "query NavigationHeaderQuery($datasource: String!, $language: String!) { datasource: item(path: $datasource, language: $language) { brandLogo: field(name: \"BrandLogo\") { jsonValue } ctaLabel: field(name: \"CtaLabel\") { jsonValue } ctaLink: field(name: \"CtaLink\") { jsonValue } children { results { id linkText: field(name: \"LinkText\") { jsonValue } linkUrl: field(name: \"LinkUrl\") { jsonValue } } } } }"
+      componentQuery: "query NavigationHeaderQuery($datasource: String!, $language: String!) { datasource: item(path: $datasource, language: $language) { brandLogo: field(name: \"BrandLogo\") { jsonValue } ctaLabel: field(name: \"CtaLabel\") { jsonValue } ctaLink: field(name: \"CtaLink\") { jsonValue } requestProductsLink: field(name: \"RequestProductsLink\") { jsonValue } loginLink: field(name: \"LoginLink\") { jsonValue } pseLink: field(name: \"PseLink\") { jsonValue } searchLabel: field(name: \"SearchLabel\") { jsonValue } searchIndex: field(name: \"SearchIndex\") { jsonValue } titleMapping: field(name: \"TitleMapping\") { jsonValue } linkMapping: field(name: \"LinkMapping\") { jsonValue } resultsPage: field(name: \"ResultsPage\") { jsonValue } maxSuggestions: field(name: \"MaxSuggestions\") { jsonValue } children { results { id linkText: field(name: \"LinkText\") { jsonValue } linkUrl: field(name: \"LinkUrl\") { jsonValue } linkTier: field(name: \"LinkTier\") { jsonValue } hasDropdown: field(name: \"HasDropdown\") { jsonValue } } } } }"
       addFieldEditorButton: "1"
       renderingContentsResolver: ""
       registeredInAvailableRenderings: true
@@ -219,6 +220,7 @@ components:
         - { name: "Default", itemId: "{150B9AFE-2B9F-48AD-8F01-036666057814}" }
         - { name: "Transparent", itemId: "{A46EFC9D-7CF0-4C92-9577-1D94FD1D9782}" }
         - { name: "Minimal", itemId: "{608E0EC7-E2C6-4093-A1A1-3962FF17885A}" }
+        - { name: "Davivienda", itemId: "{E34FD11F-FE9E-4539-96A4-CE53CFBC523D}" }
 
     verification:
       checkedAt: "2026-05-05T16:00:00Z"
@@ -241,6 +243,7 @@ components:
 
     notes:
       - "2026-05-05: Converted from context-only (Navigation Contents Resolver) to list datasource component. Nav links now authored as child items instead of auto-generated from site tree."
+      - "2026-09-10: Added the Davivienda variant and extended ComponentQuery for the approved two-tier header datasource. Variant instance {7C05427A-E6BA-4B2A-9F1F-3A087388305A} is wired in the Header partial design."
 
   - name: "HeroBanner"
     kind: "simple"
@@ -1504,7 +1507,7 @@ components:
     category: "Navigation"
     status: "complete"
     createdAt: "2026-03-25T20:00:00Z"
-    updatedAt: "2026-05-05T13:00:00Z"
+    updatedAt: "2026-09-10T16:22:00Z"
 
     react:
       filePath: "src/components/uiim/navigation/SiteFooter.tsx"
@@ -1514,6 +1517,7 @@ components:
         - "Default"
         - "Minimal"
         - "MegaFooter"
+        - "Davivienda"
 
     templates:
       datasource:
@@ -1560,7 +1564,7 @@ components:
       datasourceTemplatePath: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/SiteFooterData"
       datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='SiteFooterData Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='SiteFooterData Folder']"
       parametersTemplateId: "{E7E0DD7B-2039-4895-970B-20BB8FCD8C89}"
-      componentQuery: "query SiteFooterData($datasource: String!, $language: String!) { datasource: item(path: $datasource, language: $language) { brandLogo: field(name: \"BrandLogo\") { jsonValue } } }"
+      componentQuery: "query SiteFooterData($datasource: String!, $language: String!) { datasource: item(path: $datasource, language: $language) { brandLogo: field(name: \"BrandLogo\") { jsonValue } description: field(name: \"Description\") { jsonValue } copyrightText: field(name: \"CopyrightText\") { jsonValue } children { results { id itemType: field(name: \"ItemType\") { jsonValue } groupTitle: field(name: \"GroupTitle\") { jsonValue } linkText: field(name: \"LinkText\") { jsonValue } linkUrl: field(name: \"LinkUrl\") { jsonValue } itemImage: field(name: \"ItemImage\") { jsonValue } } } } }"
       addFieldEditorButton: "1"
       registeredInAvailableRenderings: true
 
@@ -1571,6 +1575,7 @@ components:
         - { name: "Default", itemId: "{143CFE84-1E77-4961-975C-38564DC43DB9}" }
         - { name: "Minimal", itemId: "{AF87D61B-F6A8-4036-9BF8-FDB586268D24}" }
         - { name: "MegaFooter", itemId: "{DA131066-F9A2-47F0-A099-F614E61817AA}" }
+        - { name: "Davivienda", itemId: "{8D04CB80-47DE-40B2-977A-44989BFD2004}" }
 
     verification:
       checkedAt: "2026-03-25T20:00:00Z"
@@ -1586,7 +1591,8 @@ components:
       pendingManual:
         - "Renderings on Available Renderings (silent-write, appended with user-provided value)"
 
-    notes: []
+    notes:
+      - "2026-09-10: Added the Davivienda variant and extended ComponentQuery for the approved responsive footer datasource. Variant instance {99A0D48A-F3AA-4D07-BB3F-919181C22FFC} is wired in the Footer partial design."
 
   - name: "NewsletterSignup"
     kind: "simple"
@@ -2695,7 +2701,9 @@ components:
       passed: ["Templates and field types verified", "Datasource folder and populated item verified", "Rendering configuration verified", "Default variant created", "React file and component map updated", "Registered in Available Renderings"]
       failed: []
       pendingManual: ["Silent-write __Standard values and __Masters fields"]
-    notes: ["2026-09-10: Planned by approved Davivienda pixel-perfect demo build."]
+    notes:
+      - "2026-09-10: Built for the approved Davivienda pixel-perfect demo."
+      - "2026-09-10: Added to Header partial design as instance {246D222D-2BBF-4F85-98F4-5DC487744AC1} and wired to datasource {18B81916-43F1-4DFD-8CCA-611814010B05}. Legacy NavigationHeader is suppressed by demo CSS."
 
   - name: "ServiceChannelsGrid"
     kind: "list"
@@ -2866,7 +2874,9 @@ components:
       passed: ["Templates and field types verified", "Datasource folder and populated item with 36 children verified", "Rendering configuration verified", "Default variant created", "React file and component map updated", "Registered in Available Renderings"]
       failed: []
       pendingManual: ["Silent-write __Standard values and __Masters fields"]
-    notes: ["2026-09-10: Planned by approved Davivienda pixel-perfect demo build."]
+    notes:
+      - "2026-09-10: Built for the approved Davivienda pixel-perfect demo."
+      - "2026-09-10: Added to Footer partial design as instance {24E1F0DA-51DC-437D-80C6-8D5561CB3D78} and wired to datasource {A17E9702-3531-41E3-9E82-EE8092492AF8}. Legacy SiteFooter is suppressed by demo CSS."
 
   - name: "FloatingSupportButton"
     kind: "simple"

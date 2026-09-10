@@ -1,8 +1,14 @@
 import React, { JSX } from 'react';
 import {
+  Field,
   ImageField,
+  LinkField,
+  Link as ContentSdkLink,
   NextImage as ContentSdkImage,
+  RichText as ContentSdkRichText,
+  Text,
 } from '@sitecore-content-sdk/nextjs';
+import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { ComponentProps } from 'lib/component-props';
 import { cn } from '@/lib/utils';
@@ -339,6 +345,106 @@ export const MegaFooter = (props: SiteFooterProps): JSX.Element => {
               <a href="#" className="hover:opacity-100 transition-opacity">Terms of Service</a>
               <a href="#" className="hover:opacity-100 transition-opacity">Cookie Settings</a>
             </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+interface DaviviendaFooterItemFields {
+  id: string;
+  itemType: { jsonValue: Field<string> };
+  groupTitle: { jsonValue: Field<string> };
+  linkText: { jsonValue: Field<string> };
+  linkUrl: { jsonValue: LinkField };
+  itemImage: { jsonValue: ImageField };
+}
+
+interface DaviviendaFooterDatasource {
+  brandLogo: { jsonValue: ImageField };
+  description: { jsonValue: Field<string> };
+  copyrightText: { jsonValue: Field<string> };
+  children?: { results?: DaviviendaFooterItemFields[] };
+}
+
+/* Davivienda variant — responsive white mega footer matching the reference */
+export const Davivienda = (props: SiteFooterProps): JSX.Element => {
+  const { params, page } = props;
+  const datasource = props.fields?.data?.datasource as DaviviendaFooterDatasource | undefined;
+  const isEditing = page?.mode?.isEditing;
+
+  if (!datasource) return <SiteFooterDefaultComponent />;
+
+  const items = datasource.children?.results ?? [];
+  const navigationItems = items.filter((item) => item.itemType?.jsonValue?.value === 'navigation');
+  const socialItems = items.filter((item) => item.itemType?.jsonValue?.value === 'social');
+  const storeItems = items.filter((item) => item.itemType?.jsonValue?.value === 'store');
+  const groupedItems = navigationItems.reduce<Map<string, DaviviendaFooterItemFields[]>>((groups, item) => {
+    const title = item.groupTitle?.jsonValue?.value || '';
+    groups.set(title, [...(groups.get(title) ?? []), item]);
+    return groups;
+  }, new Map());
+
+  const renderLink = (item: DaviviendaFooterItemFields, className?: string) => (
+    <ContentSdkLink key={item.id} field={item.linkUrl?.jsonValue} className={className}>
+      {item.itemImage?.jsonValue?.value?.src && (
+        <ContentSdkImage field={item.itemImage.jsonValue} className="h-8 w-auto object-contain" />
+      )}
+      <Text field={item.linkText?.jsonValue} tag="span" />
+    </ContentSdkLink>
+  );
+
+  return (
+    <div className={cn('component site-footer site-footer--davivienda', params.styles)} id={params.RenderingIdentifier}>
+      <footer className="bg-[var(--brand-footer-bg)] text-[var(--brand-footer-fg)]">
+        <div className="mx-auto max-w-[1160px] px-7 pb-7 pt-24">
+          {(datasource.brandLogo?.jsonValue?.value?.src || isEditing) && (
+            <ContentSdkImage field={datasource.brandLogo?.jsonValue} className="mb-7 h-auto w-44 object-contain" />
+          )}
+          {(datasource.description?.jsonValue?.value || isEditing) && (
+            <ContentSdkRichText field={datasource.description?.jsonValue} className="mb-11 max-w-[1100px] text-base leading-6 text-[var(--brand-fg)]" />
+          )}
+
+          <div className="hidden grid-cols-4 gap-14 border-b border-[var(--brand-border)] pb-10 md:grid">
+            {[...groupedItems.entries()].map(([title, groupItems]) => (
+              <section key={title}>
+                <Text field={groupItems[0].groupTitle?.jsonValue} tag="h3" className="mb-6 text-base font-bold text-[var(--brand-fg)]" />
+                <ul className="space-y-5 text-sm text-[var(--brand-fg)]">
+                  {groupItems.map((item) => <li key={item.id}>{renderLink(item, 'hover:text-[var(--brand-primary)]')}</li>)}
+                </ul>
+              </section>
+            ))}
+          </div>
+
+          <div className="divide-y divide-[var(--brand-border)] border-y border-[var(--brand-border)] md:hidden">
+            {[...groupedItems.entries()].map(([title, groupItems]) => (
+              <details key={title} className="group">
+                <summary className="flex cursor-pointer list-none items-center justify-between py-4 [&::-webkit-details-marker]:hidden">
+                  <Text field={groupItems[0].groupTitle?.jsonValue} tag="span" className="text-sm font-bold text-[var(--brand-fg)]" />
+                  <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden="true" />
+                </summary>
+                <ul className="space-y-3 pb-5 text-sm">
+                  {groupItems.map((item) => <li key={item.id}>{renderLink(item)}</li>)}
+                </ul>
+              </details>
+            ))}
+          </div>
+
+          <div className="flex flex-col gap-6 py-8 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-wrap gap-4">
+              {socialItems.map((item) => renderLink(item, 'flex h-9 min-w-9 items-center justify-center rounded-full bg-[var(--brand-dark)] px-2 text-xs font-bold text-[var(--brand-dark-foreground)]'))}
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {storeItems.map((item) => renderLink(item, 'rounded-md bg-[var(--brand-dark)] px-4 py-2 text-xs font-bold text-[var(--brand-dark-foreground)]'))}
+            </div>
+          </div>
+        </div>
+        <div className="bg-[var(--brand-dark)] px-5 py-3 text-center text-xs font-semibold text-[var(--brand-dark-foreground)] sm:text-right">
+          <div className="mx-auto max-w-[1160px]">
+            {(datasource.copyrightText?.jsonValue?.value || isEditing) && (
+              <Text field={datasource.copyrightText?.jsonValue} tag="p" />
+            )}
           </div>
         </div>
       </footer>

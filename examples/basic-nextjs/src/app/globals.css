@@ -111,6 +111,18 @@
   --brand-card-radius: 1rem;
 }
 
+/* Keep only the Davivienda variants while legacy partial-design items are removed. */
+body:has(.navigation-header--davivienda)
+  .navigation-header:not(.navigation-header--davivienda),
+body:has(.navigation-header--davivienda) .two-tier-navigation-header {
+  display: none;
+}
+
+body:has(.site-footer--davivienda) .site-footer:not(.site-footer--davivienda),
+body:has(.site-footer--davivienda) .responsive-mega-footer {
+  display: none;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

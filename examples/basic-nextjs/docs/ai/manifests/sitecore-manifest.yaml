@@ -2703,7 +2703,7 @@ components:
       pendingManual: ["Silent-write __Standard values and __Masters fields"]
     notes:
       - "2026-09-10: Built for the approved Davivienda pixel-perfect demo."
-      - "2026-09-10: Added to Header partial design as instance {246D222D-2BBF-4F85-98F4-5DC487744AC1} and wired to datasource {18B81916-43F1-4DFD-8CCA-611814010B05}. Legacy NavigationHeader is suppressed by demo CSS."
+      - "2026-09-10: Superseded by the Davivienda variant on NavigationHeader. Kept registered because the Agent API cannot remove its existing partial-design instance; demo CSS suppresses it."
 
   - name: "ServiceChannelsGrid"
     kind: "list"
@@ -2876,7 +2876,7 @@ components:
       pendingManual: ["Silent-write __Standard values and __Masters fields"]
     notes:
       - "2026-09-10: Built for the approved Davivienda pixel-perfect demo."
-      - "2026-09-10: Added to Footer partial design as instance {24E1F0DA-51DC-437D-80C6-8D5561CB3D78} and wired to datasource {A17E9702-3531-41E3-9E82-EE8092492AF8}. Legacy SiteFooter is suppressed by demo CSS."
+      - "2026-09-10: Superseded by the Davivienda variant on SiteFooter. Kept registered because the Agent API cannot remove its existing partial-design instance; demo CSS suppresses it."
 
   - name: "FloatingSupportButton"
     kind: "simple"

@@ -1,0 +1,124 @@
+# Client Brand Theme — Davivienda
+# Extracted from the supplied full-page screenshot and a Playwright capture of davivienda.com.
+
+client:
+  name: "Davivienda"
+  sourceUrl: "https://www.davivienda.com/"
+  extractedAt: "2026-09-10T14:16:58Z"
+  extractedBy: "pi"
+
+colors:
+  primary: "#e1111c"
+  primaryForeground: "#ffffff"
+  secondary: "#141f25"
+  secondaryForeground: "#ffffff"
+  accent: "#fdbb11"
+  accentForeground: "#141f25"
+  background: "#ffffff"
+  foreground: "#1d1d1d"
+  muted: "#f2f3f5"
+  mutedForeground: "#404040"
+  headerBackground: "#b20a16"
+  headerForeground: "#ffffff"
+  footerBackground: "#ffffff"
+  footerForeground: "#404040"
+  border: "#d9d9d9"
+  ring: "#e1111c"
+  extra:
+    - { name: "brandRedBright", value: "#ed1c27" }
+    - { name: "headerGradientStart", value: "#870412" }
+    - { name: "headerGradientEnd", value: "#e1111c" }
+    - { name: "surfaceDarkAlt", value: "#2a3239" }
+    - { name: "faqBackground", value: "#f1f2f8" }
+    - { name: "featurePurple", value: "#7f26ff" }
+
+typography:
+  headingFamily: "'Nunito Sans', sans-serif"
+  headingWeight: "700"
+  bodyFamily: "'Open Sans', sans-serif"
+  bodyWeight: "400"
+  monoFamily: "'Roboto Mono', monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,500;6..12,700;6..12,900&family=Open+Sans:wght@400;500;600;700&display=swap"
+  scale:
+    hero: "3.5rem"
+    h1: "2.5rem"
+    h2: "2rem"
+    h3: "1.75rem"
+    body: "1rem"
+    small: "0.875rem"
+  headingTransform: "none"
+  letterSpacing: "normal"
+  lineHeight: "tight"
+
+spacing:
+  density: "normal"
+  sectionGap: "5rem"
+  containerMaxWidth: "1136px"
+  containerPadding: "1.5rem"
+
+shape:
+  borderRadius: "1rem"
+  buttonRadius: "9999px"
+  cardRadius: "1rem"
+  imageRadius: "0.75rem"
+  shadowStyle: "none"
+  borderStyle: "subtle"
+
+tone:
+  overall: "approachable corporate"
+  colorMode: "mixed"
+  contrast: "high"
+  imagery: "people-focused photography with bold graphic color fields"
+  heroStyle: "split-image-text"
+  cardStyle: "flat"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#e1111c"
+      secondary: "#141f25"
+      accent: "#fdbb11"
+  fontFamily:
+    heading: ["Nunito Sans", "sans-serif"]
+    body: ["Open Sans", "sans-serif"]
+  borderRadius:
+    DEFAULT: "1rem"
+    button: "9999px"
+    card: "1rem"
+
+cssVariables: |
+  :root {
+    --brand-primary: #e1111c;
+    --brand-primary-foreground: #ffffff;
+    --brand-accent: #fdbb11;
+    --brand-accent-foreground: #141f25;
+    --brand-dark: #141f25;
+    --brand-dark-foreground: #ffffff;
+    --brand-bg: #ffffff;
+    --brand-fg: #1d1d1d;
+    --brand-muted: #f2f3f5;
+    --brand-muted-foreground: #404040;
+    --brand-border: #d9d9d9;
+    --brand-header-bg: #b20a16;
+    --brand-header-fg: #ffffff;
+    --brand-footer-bg: #ffffff;
+    --brand-footer-fg: #404040;
+    --brand-feature-purple: #7f26ff;
+    --brand-faq-bg: #f1f2f8;
+    --brand-heading-font: 'Nunito Sans', sans-serif;
+    --brand-body-font: 'Open Sans', sans-serif;
+    --brand-button-radius: 9999px;
+    --brand-card-radius: 1rem;
+  }
+
+extraction:
+  confidence: "medium"
+  method: "playwright-full"
+  notes:
+    - "The supplied 1910x5384 screenshot was treated as the visual source of truth; Playwright also captured desktop, mobile, and hero views."
+    - "Davivienda uses proprietary Davivienda and Davivienda Condensed fonts in weights 300-900. Nunito Sans and Open Sans are close Google Fonts substitutes for this demo."
+    - "The primary CTA red (#e1111c), bright brand red (#ed1c27), dark section (#141f25), muted surface (#f2f3f5), and FAQ surface (#f1f2f8) were confirmed from screenshot pixels."
+    - "The desktop navigation uses a horizontal red gradient from approximately #870412 to #e1111c; --brand-header-bg uses the midpoint #b20a16 as the solid fallback."
+    - "The main footer is white with dark text; only the narrow copyright strip is dark (#21262e)."
+    - "No CSS custom properties or Google Fonts were exposed by the source site, so reusable demo tokens and font substitutions were inferred from computed styles and screenshots."

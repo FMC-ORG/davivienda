@@ -443,3 +443,92 @@ export const Carousel = ({ fields, params, page }: FeatureCardsGridProps): JSX.E
     </div>
   );
 };
+
+/* Davivienda variant — image cards with desktop grid and mobile snap scrolling */
+export const DaviviendaInterestCards = ({
+  fields,
+  params,
+  page,
+}: FeatureCardsGridProps): JSX.Element => {
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FeatureCardsGridDefaultComponent />;
+
+  const cards = datasource.children?.results ?? [];
+  const cardBackgrounds = [
+    "var(--brand-accent)",
+    "var(--brand-feature-purple)",
+    "var(--brand-primary)",
+  ];
+
+  return (
+    <div
+      className={cn("component feature-cards-grid", params.styles)}
+      id={params.RenderingIdentifier}
+    >
+      <section className="bg-[var(--brand-muted)] px-5 py-14 sm:px-6 sm:py-20">
+        <div className="mx-auto max-w-[1136px]">
+          <div className="mb-8 max-w-2xl text-left">
+            {(datasource.title?.jsonValue?.value || isEditing) && (
+              <Text
+                field={datasource.title?.jsonValue}
+                tag="h2"
+                className="text-3xl font-bold font-[var(--brand-heading-font)] text-[var(--brand-fg)] sm:text-4xl"
+              />
+            )}
+            {(datasource.description?.jsonValue?.value || isEditing) && (
+              <ContentSdkRichText
+                field={datasource.description?.jsonValue}
+                className="mt-3 text-sm leading-6 text-[var(--brand-muted-foreground)] sm:text-base"
+              />
+            )}
+          </div>
+          <div className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-3 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0">
+            {cards.map((card, index) => (
+              <article
+                key={card.id}
+                className="flex min-w-[82vw] snap-center flex-col overflow-hidden rounded-[var(--brand-card-radius)] bg-[var(--brand-bg)] md:min-w-0"
+              >
+                <div className="space-y-2 px-5 pb-4 pt-5">
+                  {(card.cardTitle?.jsonValue?.value || isEditing) && (
+                    <Text
+                      field={card.cardTitle?.jsonValue}
+                      tag="h3"
+                      className="text-xl font-bold font-[var(--brand-heading-font)] text-[var(--brand-fg)]"
+                    />
+                  )}
+                  {(card.cardDescription?.jsonValue?.value || isEditing) && (
+                    <ContentSdkRichText
+                      field={card.cardDescription?.jsonValue}
+                      className="text-sm leading-5 text-[var(--brand-muted-foreground)]"
+                    />
+                  )}
+                </div>
+                <div
+                  className="relative mt-auto min-h-[240px] overflow-hidden"
+                  style={{
+                    backgroundColor:
+                      cardBackgrounds[index % cardBackgrounds.length],
+                  }}
+                >
+                  {(card.cardImage?.jsonValue?.value?.src || isEditing) && (
+                    <ContentSdkImage
+                      field={card.cardImage?.jsonValue}
+                      className="absolute inset-0 h-full w-full object-contain object-bottom"
+                    />
+                  )}
+                  {(card.cardLink?.jsonValue?.value?.href || isEditing) && (
+                    <ContentSdkLink
+                      field={card.cardLink?.jsonValue}
+                      className="absolute bottom-4 left-4 right-4 z-10 rounded-[var(--brand-button-radius)] bg-[var(--brand-bg)] px-4 py-2 text-center text-xs font-semibold text-[var(--brand-fg)] transition-opacity hover:opacity-90"
+                    />
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};

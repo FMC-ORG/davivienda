@@ -221,3 +221,34 @@ export const TwoColumn = ({ fields, params, page }: FAQAccordionProps): JSX.Elem
     </div>
   );
 };
+
+/* Davivienda variant — compact rounded FAQ card joined to the category tabs */
+export const DaviviendaFaqAccordion = ({
+  fields,
+  params,
+  page,
+}: FAQAccordionProps): JSX.Element => {
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <FAQAccordionDefaultComponent />;
+
+  const items = datasource.children?.results ?? [];
+
+  return (
+    <div
+      className={cn("component faq-accordion", params.styles)}
+      id={params.RenderingIdentifier}
+    >
+      <section className="bg-[var(--brand-faq-bg,var(--brand-muted))] px-5 pb-14 pt-8 sm:px-6 sm:pb-20">
+        <div className="mx-auto max-w-[760px]">
+          {isEditing && <SectionHeader datasource={datasource} isEditing />}
+          <div className="overflow-hidden rounded-[var(--brand-card-radius)] bg-[var(--brand-bg)] px-5 sm:px-7">
+            {items.map((item) => (
+              <AccordionItem key={item.id} item={item} isEditing={isEditing} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};

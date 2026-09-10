@@ -1,6 +1,6 @@
 generatedAt: "2026-03-20T09:00:00Z"
-lastUpdatedAt: "2026-08-18T00:00:00Z"
-lastUpdatedBy: "claude-agent"
+lastUpdatedAt: "2026-09-10T15:02:00Z"
+lastUpdatedBy: "pi"
 
 project:
   siteCollection: "main"
@@ -15,10 +15,10 @@ project:
 
 availableRenderings:
   itemId: "{2BF7E311-E3A5-4290-A043-AB97EA1DFB15}"
-  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}|{FAA6D190-2A7C-4A18-A09D-7E5D33A5BDAF}|{06D05BB6-2DD6-457A-BC64-22A07F7D4359}"
-  lastUpdatedAt: "2026-08-18T00:00:00Z"
-  renderingCount: 37
-  note: "2026-08-18: appended {158772E0-46FD-4626-9144-527C24854F97} (SearchCollection), then {59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F} (SearchTypeahead), each with a pre-write staleness check against live get_allowed_comps_by_ph and post-write verification. lastKnownValue below is the 2026-08-07 pre-SearchResults value; current = that + {D33F0079-E54F-48C3-A33A-6A3A83146DA8} + {158772E0-46FD-4626-9144-527C24854F97} + {59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}."
+  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}|{FAA6D190-2A7C-4A18-A09D-7E5D33A5BDAF}|{06D05BB6-2DD6-457A-BC64-22A07F7D4359}|{D33F0079-E54F-48C3-A33A-6A3A83146DA8}|{158772E0-46FD-4626-9144-527C24854F97}|{59FFD4F9-1D2B-4C56-94D8-C15235AC3E0F}|{267A6203-164E-4BC7-81A8-43F478256BB9}|{49EA4151-5A68-4493-A58D-A0AD23204505}|{EEFAFBAC-EB83-4411-A9B6-E1E2203BD0C5}|{EB71A834-0ED2-48D5-BD47-480C10AC187A}"
+  lastUpdatedAt: "2026-09-10T15:02:00Z"
+  renderingCount: 41
+  note: "2026-09-10: live Renderings field read successfully at 37 entries; appended and verified TwoTierNavigationHeader, ServiceChannelsGrid, ResponsiveMegaFooter, and FloatingSupportButton."
   warning: "MCP cannot read this field — value may be stale if modified outside this session. Also: MCP write returned empty updatedFields — silent-write. Verify in Content Editor."
 
 components:
@@ -258,6 +258,7 @@ components:
         - "BackgroundImage"
         - "VideoBackground"
         - "Minimal"
+        - "DaviviendaHero"
 
     templates:
       datasource:
@@ -321,6 +322,7 @@ components:
         - { name: "BackgroundImage", itemId: "{948210B2-B8AF-47C1-A04F-E220071C0A63}" }
         - { name: "VideoBackground", itemId: "{96586509-EBD7-4642-A127-0C65AEE1BD99}" }
         - { name: "Minimal", itemId: "{FA46BF9A-3783-4615-B4E6-5F5B33A78B48}" }
+        - { name: "DaviviendaHero", itemId: "{5598CD87-3CDA-4C0A-8E1D-7E8C76C6AA1A}" }
 
     verification:
       checkedAt: "2026-03-25T13:30:00Z"
@@ -364,6 +366,7 @@ components:
         - "Default"
         - "Underline"
         - "Boxed"
+        - "DaviviendaFaqTabs"
 
     templates:
       datasource:
@@ -440,6 +443,7 @@ components:
         - { name: "Default", itemId: "{37CD0AB0-A6F4-4F5B-9032-666FA10925D4}" }
         - { name: "Underline", itemId: "{F6AB5E2B-D266-4BAC-8536-48404A6EF04A}" }
         - { name: "Boxed", itemId: "{3A61A7A8-3D68-498D-A79D-9D0191AE4F90}" }
+        - { name: "DaviviendaFaqTabs", itemId: "{1A952FC9-2C9B-4DCA-9557-15612E5AEF11}" }
 
     verification:
       checkedAt: "2026-03-25T14:30:00Z"
@@ -717,6 +721,7 @@ components:
         - "TwoColumn"
         - "FourColumn"
         - "Horizontal"
+        - "DaviviendaAppBenefits"
 
     templates:
       datasource:
@@ -798,6 +803,7 @@ components:
         - { name: "TwoColumn", itemId: "{3935D1DD-DC84-4A01-B271-BEF9475C5AE1}" }
         - { name: "FourColumn", itemId: "{5F5B90A2-F88D-4415-B8B1-D9DCDE1A6B5C}" }
         - { name: "Horizontal", itemId: "{EF716EAC-BEBF-484A-8826-D2051F549F2F}" }
+        - { name: "DaviviendaAppBenefits", itemId: "{16106995-FB6C-42A9-A1A7-0804AC5002A8}" }
 
     verification:
       checkedAt: "2026-03-25T16:30:00Z"
@@ -1177,6 +1183,7 @@ components:
         - "TwoColumn"
         - "WithImages"
         - "Carousel"
+        - "DaviviendaInterestCards"
 
     templates:
       datasource:
@@ -1257,7 +1264,8 @@ components:
         - { name: "Default", itemId: "{495EF058-D306-4328-ABE4-261E7CFE8E9E}" }
         - { name: "TwoColumn", itemId: "{0BCA5162-9643-49F3-BEE2-6B5243287D5E}" }
         - { name: "WithImages", itemId: "{0378DF47-C562-4BE1-8BA7-DFE429A2015A}" }
-        - { name: "Carousel", itemId: "" }  # TODO: create in Sitecore
+        - { name: "Carousel", itemId: "{F2C49451-6C21-4004-A70C-B346385D5F5F}" }
+        - { name: "DaviviendaInterestCards", itemId: "{50E1DBEB-5A6C-4077-B77A-38E793EE1A36}" }
 
     verification:
       checkedAt: "2026-03-25T18:30:00Z"
@@ -1843,6 +1851,7 @@ components:
         - "Default"
         - "AllOpen"
         - "TwoColumn"
+        - "DaviviendaFaqAccordion"
 
     templates:
       datasource:
@@ -1921,6 +1930,7 @@ components:
         - { name: "Default", itemId: "{3D01B4ED-75E0-4AD3-A6F4-FA47606082CB}" }
         - { name: "AllOpen", itemId: "{FFC0D7F8-8D1C-4A6E-8FC1-DD429718057A}" }
         - { name: "TwoColumn", itemId: "{9221A2EC-3D89-40AF-9569-ADF828F398F4}" }
+        - { name: "DaviviendaFaqAccordion", itemId: "{896A4D99-C792-45F8-A804-121A95F92B87}" }
 
     verification:
       checkedAt: "2026-03-25T21:00:00Z"
@@ -2054,6 +2064,8 @@ components:
         - "Centered"
         - "WithVideo"
         - "IconLeft"
+        - "DaviviendaPseCallout"
+        - "DaviviendaAppPromo"
 
     templates:
       datasource:
@@ -2116,6 +2128,8 @@ components:
         - { name: "Centered", itemId: "{3C33C16D-F0D3-4FBF-8D78-CE70CEA0868B}" }
         - { name: "WithVideo", itemId: "{E58A4CB1-BFB4-4FDF-B48D-6254708B05CA}" }
         - { name: "IconLeft", itemId: "{E39E52FE-885D-433B-A2D3-B20F66E8F767}" }
+        - { name: "DaviviendaPseCallout", itemId: "{6F8FC58E-A56E-496F-8DDC-B827257E8400}" }
+        - { name: "DaviviendaAppPromo", itemId: "{71E1B2FB-96DA-4811-A6D6-3633DE4C6E94}" }
 
     verification:
       checkedAt: "2026-03-25T22:00:00Z"
@@ -2147,6 +2161,7 @@ components:
       variants:
         - "Default"
         - "WithThumbnails"
+        - "DaviviendaCampaignCarousel"
 
     templates:
       parent:
@@ -2217,6 +2232,14 @@ components:
       componentQuery: "query HeroBannerCarousel($datasource: String!, $language: String!) { datasource: item(path: $datasource, language: $language) { title: field(name: \"Title\") { jsonValue } children { results { id slideTitle: field(name: \"SlideTitle\") { jsonValue } slideSubtitle: field(name: \"SlideSubtitle\") { jsonValue } slideImage: field(name: \"SlideImage\") { jsonValue } primaryLink: field(name: \"PrimaryLink\") { jsonValue } secondaryLink: field(name: \"SecondaryLink\") { jsonValue } } } } }"
       addFieldEditorButton: "1"
       registeredInAvailableRenderings: true
+
+    headlessVariants:
+      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/HeroBannerCarousel"
+      containerId: "{4E1D46FB-24EF-435E-942E-FF9834C82583}"
+      variants:
+        - { name: "Default", itemId: "{383CBA03-1E27-408D-B237-CC6DB850A6B9}" }
+        - { name: "WithThumbnails", itemId: "{3E956656-C119-4AB4-BD6F-151027359A62}" }
+        - { name: "DaviviendaCampaignCarousel", itemId: "{C36732E1-CB5A-4703-8D3D-7FA0CF8E3BEB}" }
 
     verification:
       passed:
@@ -2586,6 +2609,335 @@ components:
       componentMapUpdated: passed
     notes:
       - "2026-06-09: Created. Closing CTA band on dark background."
+
+  - name: "TwoTierNavigationHeader"
+    kind: "list"
+    category: "Navigation"
+    status: "complete"
+    createdAt: "2026-09-10T14:48:00Z"
+    updatedAt: "2026-09-10T15:02:00Z"
+    react:
+      filePath: "src/components/uiim/navigation/TwoTierNavigationHeader.tsx"
+      componentMapKey: "TwoTierNavigationHeader"
+      variants: ["Default"]
+    templates:
+      parent:
+        name: "TwoTierNavigationHeader"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/TwoTierNavigationHeader"
+        itemId: "{78F74DA4-F843-4E4C-9A15-DA775F01266C}"
+        sectionName: "Data"
+        fields:
+          - { name: "BrandLogo", type: "Image" }
+          - { name: "RequestProductsLink", type: "General Link" }
+          - { name: "LoginLink", type: "General Link" }
+          - { name: "PseLink", type: "General Link" }
+          - { name: "SearchLabel", type: "Single-Line Text" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{ECB04FC3-891E-4BD7-9756-1B231270472A}"
+          linked: true
+          masters: ["TwoTierNavigationLink"]
+      child:
+        name: "TwoTierNavigationLink"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/TwoTierNavigationLink"
+        itemId: "{2AB9F4A7-9298-4645-BA91-D612AA9B9000}"
+        sectionName: "Data"
+        fields:
+          - { name: "LinkText", type: "Single-Line Text" }
+          - { name: "LinkUrl", type: "General Link" }
+          - { name: "LinkTier", type: "Single-Line Text" }
+          - { name: "HasDropdown", type: "Checkbox" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{825E8E0D-1F1A-4036-B1F2-1E4697FE7BE8}"
+          linked: true
+      folder:
+        name: "TwoTierNavigationHeader Folder"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Folders/TwoTierNavigationHeader Folder"
+        itemId: "{A810EBC8-05E2-47EA-990B-6FE8C7DE94E5}"
+        standardValues:
+          itemId: "{81FDD27D-4173-49A4-BB7D-234A97C257FE}"
+          linked: true
+          masters: ["TwoTierNavigationHeader"]
+      renderingParams:
+        name: "TwoTierNavigationHeader"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Navigation/TwoTierNavigationHeader"
+        itemId: "{F022C42A-635A-4B25-AA50-F2CEE5E2555D}"
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{13A61C67-A5BD-474E-95D6-674F743222D9}"
+          linked: true
+    datasourceFolder:
+      name: "TwoTierNavigationHeaders"
+      path: "/sitecore/content/main/main-website/Data/TwoTierNavigationHeaders"
+      itemId: "{A8DD1A35-E08E-4279-84F4-EB4D2E714514}"
+      insertOptionsSet: true
+      exampleItem:
+        name: "Davivienda - Two-Tier Navigation Header"
+        itemId: "{18B81916-43F1-4DFD-8CCA-611814010B05}"
+    rendering:
+      name: "TwoTierNavigationHeader"
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Navigation/TwoTierNavigationHeader"
+      itemId: "{267A6203-164E-4BC7-81A8-43F478256BB9}"
+      componentName: "TwoTierNavigationHeader"
+      datasourceTemplatePath: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/TwoTierNavigationHeader"
+      parametersTemplateId: "{F022C42A-635A-4B25-AA50-F2CEE5E2555D}"
+      componentQuery: "generic-field-access"
+      addFieldEditorButton: "1"
+      registeredInAvailableRenderings: true
+    headlessVariants:
+      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/TwoTierNavigationHeader"
+      containerId: "{067E5C37-158C-44AA-959D-C49E747BF827}"
+      variants:
+        - { name: "Default", itemId: "{43F89967-B3AD-4CF3-83F1-39826A5D2649}" }
+    verification:
+      checkedAt: "2026-09-10T15:02:00Z"
+      passed: ["Templates and field types verified", "Datasource folder and populated item verified", "Rendering configuration verified", "Default variant created", "React file and component map updated", "Registered in Available Renderings"]
+      failed: []
+      pendingManual: ["Silent-write __Standard values and __Masters fields"]
+    notes: ["2026-09-10: Planned by approved Davivienda pixel-perfect demo build."]
+
+  - name: "ServiceChannelsGrid"
+    kind: "list"
+    category: "Content"
+    status: "complete"
+    createdAt: "2026-09-10T14:48:00Z"
+    updatedAt: "2026-09-10T15:02:00Z"
+    react:
+      filePath: "src/components/uiim/content/ServiceChannelsGrid.tsx"
+      componentMapKey: "ServiceChannelsGrid"
+      variants: ["Default"]
+    templates:
+      parent:
+        name: "ServiceChannelsGrid"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Content/ServiceChannelsGrid"
+        itemId: "{CB059888-E9FD-43C1-B007-E82A33DB2E27}"
+        sectionName: "Data"
+        fields:
+          - { name: "Title", type: "Single-Line Text" }
+          - { name: "PortraitImage", type: "Image" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{845D2CD4-534A-40B6-AAB3-3A855E3CE960}"
+          linked: true
+          masters: ["ServiceChannelItem"]
+      child:
+        name: "ServiceChannelItem"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Content/ServiceChannelItem"
+        itemId: "{C5D9617B-B6E2-4E91-AE64-F088CE99230A}"
+        sectionName: "Data"
+        fields:
+          - { name: "CardType", type: "Single-Line Text" }
+          - { name: "CardTitle", type: "Single-Line Text" }
+          - { name: "CardDescription", type: "Rich Text" }
+          - { name: "CardLink", type: "General Link" }
+          - { name: "CardIcon", type: "Image" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{E5D9210A-7CEE-461B-831F-6D594E401EEA}"
+          linked: true
+      folder:
+        name: "ServiceChannelsGrid Folder"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Folders/ServiceChannelsGrid Folder"
+        itemId: "{AF4AF9E8-711C-4939-B400-B5734AF29FE8}"
+        standardValues:
+          itemId: "{37511E21-3C15-4203-94E9-ABB2B70F92BE}"
+          linked: true
+          masters: ["ServiceChannelsGrid"]
+      renderingParams:
+        name: "ServiceChannelsGrid"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Content/ServiceChannelsGrid"
+        itemId: "{224760B0-9828-40A4-ACBE-B2FF70611FFE}"
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{C75C3D1F-AC35-43BE-A356-CF77E7702E60}"
+          linked: true
+    datasourceFolder:
+      name: "ServiceChannelsGrids"
+      path: "/sitecore/content/main/main-website/Data/ServiceChannelsGrids"
+      itemId: "{8D540C71-AA5E-4CBB-9754-89929106F85E}"
+      insertOptionsSet: true
+      exampleItem:
+        name: "Davivienda - Service Channels"
+        itemId: "{39513B83-D44B-434E-AD1C-51E8A995D1FB}"
+    rendering:
+      name: "ServiceChannelsGrid"
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Content/ServiceChannelsGrid"
+      itemId: "{49EA4151-5A68-4493-A58D-A0AD23204505}"
+      componentName: "ServiceChannelsGrid"
+      datasourceTemplatePath: "/sitecore/templates/Project/fmc-custom-demo/Components/Content/ServiceChannelsGrid"
+      parametersTemplateId: "{224760B0-9828-40A4-ACBE-B2FF70611FFE}"
+      componentQuery: "generic-field-access"
+      addFieldEditorButton: "1"
+      registeredInAvailableRenderings: true
+    headlessVariants:
+      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/ServiceChannelsGrid"
+      containerId: "{546296B5-7351-4356-988E-1CD46FE39467}"
+      variants:
+        - { name: "Default", itemId: "{9C22EAF4-CDF2-4C92-8487-3A535D9129DF}" }
+    verification:
+      checkedAt: "2026-09-10T15:02:00Z"
+      passed: ["Templates and field types verified", "Datasource folder and populated item verified", "Rendering configuration verified", "Default variant created", "React file and component map updated", "Registered in Available Renderings"]
+      failed: []
+      pendingManual: ["Silent-write __Standard values and __Masters fields"]
+    notes: ["2026-09-10: Planned by approved Davivienda pixel-perfect demo build."]
+
+  - name: "ResponsiveMegaFooter"
+    kind: "list"
+    category: "Navigation"
+    status: "complete"
+    createdAt: "2026-09-10T14:48:00Z"
+    updatedAt: "2026-09-10T15:02:00Z"
+    react:
+      filePath: "src/components/uiim/navigation/ResponsiveMegaFooter.tsx"
+      componentMapKey: "ResponsiveMegaFooter"
+      variants: ["Default"]
+    templates:
+      parent:
+        name: "ResponsiveMegaFooter"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/ResponsiveMegaFooter"
+        itemId: "{DD2FB6B7-3979-47B6-BD32-F9C5845D7D2C}"
+        sectionName: "Data"
+        fields:
+          - { name: "BrandLogo", type: "Image" }
+          - { name: "Description", type: "Rich Text" }
+          - { name: "CopyrightText", type: "Single-Line Text" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{464B150C-5838-4FC4-B953-98FA0CA736BF}"
+          linked: true
+          masters: ["ResponsiveMegaFooterItem"]
+      child:
+        name: "ResponsiveMegaFooterItem"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/ResponsiveMegaFooterItem"
+        itemId: "{4804DD7F-3C4E-4944-B207-B69265D02CAD}"
+        sectionName: "Data"
+        fields:
+          - { name: "ItemType", type: "Single-Line Text" }
+          - { name: "GroupTitle", type: "Single-Line Text" }
+          - { name: "LinkText", type: "Single-Line Text" }
+          - { name: "LinkUrl", type: "General Link" }
+          - { name: "ItemImage", type: "Image" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{F8E56C53-A03B-43F3-B7E2-2E8270B1EF4E}"
+          linked: true
+      folder:
+        name: "ResponsiveMegaFooter Folder"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Folders/ResponsiveMegaFooter Folder"
+        itemId: "{77A547AE-E5A1-42DC-8D5D-653D34730702}"
+        standardValues:
+          itemId: "{75526D30-1D0F-4D59-8255-5F35938E7FC6}"
+          linked: true
+          masters: ["ResponsiveMegaFooter"]
+      renderingParams:
+        name: "ResponsiveMegaFooter"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Navigation/ResponsiveMegaFooter"
+        itemId: "{D6464FD8-55F8-4F25-BF1B-6BF1CDB3299F}"
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{21DABA42-3E1A-4199-9314-0B250ADF4D59}"
+          linked: true
+    datasourceFolder:
+      name: "ResponsiveMegaFooters"
+      path: "/sitecore/content/main/main-website/Data/ResponsiveMegaFooters"
+      itemId: "{A1ACF3F7-D174-456F-8CF7-5ED80669FAEF}"
+      insertOptionsSet: true
+      exampleItem:
+        name: "Davivienda - Responsive Mega Footer"
+        itemId: "{A17E9702-3531-41E3-9E82-EE8092492AF8}"
+    rendering:
+      name: "ResponsiveMegaFooter"
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Navigation/ResponsiveMegaFooter"
+      itemId: "{EEFAFBAC-EB83-4411-A9B6-E1E2203BD0C5}"
+      componentName: "ResponsiveMegaFooter"
+      datasourceTemplatePath: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/ResponsiveMegaFooter"
+      parametersTemplateId: "{D6464FD8-55F8-4F25-BF1B-6BF1CDB3299F}"
+      componentQuery: "generic-field-access"
+      addFieldEditorButton: "1"
+      registeredInAvailableRenderings: true
+    headlessVariants:
+      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/ResponsiveMegaFooter"
+      containerId: "{5C181234-EC2D-4FB1-9242-D09F816DBC31}"
+      variants:
+        - { name: "Default", itemId: "{A648A0CB-258D-4022-98FD-09C2059D3E46}" }
+    verification:
+      checkedAt: "2026-09-10T15:02:00Z"
+      passed: ["Templates and field types verified", "Datasource folder and populated item with 36 children verified", "Rendering configuration verified", "Default variant created", "React file and component map updated", "Registered in Available Renderings"]
+      failed: []
+      pendingManual: ["Silent-write __Standard values and __Masters fields"]
+    notes: ["2026-09-10: Planned by approved Davivienda pixel-perfect demo build."]
+
+  - name: "FloatingSupportButton"
+    kind: "simple"
+    category: "Navigation"
+    status: "complete"
+    createdAt: "2026-09-10T14:48:00Z"
+    updatedAt: "2026-09-10T15:02:00Z"
+    react:
+      filePath: "src/components/uiim/navigation/FloatingSupportButton.tsx"
+      componentMapKey: "FloatingSupportButton"
+      variants: ["Default"]
+    templates:
+      datasource:
+        name: "FloatingSupportButton"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/FloatingSupportButton"
+        itemId: "{4EEA4AC3-C0C8-4E12-9420-12AE3FD70CE2}"
+        sectionName: "Data"
+        fields:
+          - { name: "AccessibilityLabel", type: "Single-Line Text" }
+          - { name: "SupportLink", type: "General Link" }
+          - { name: "SupportIcon", type: "Image" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{0A99B20E-0540-498E-AA31-72BA6A9E526C}"
+          linked: true
+      folder:
+        name: "FloatingSupportButton Folder"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Folders/FloatingSupportButton Folder"
+        itemId: "{BDD0FBB8-8AD5-4B6D-A5A5-B33BBDA6B14F}"
+        standardValues:
+          itemId: "{B46E6DD1-4761-4FAA-B6ED-FB174CF62E0C}"
+          linked: true
+          masters: ["FloatingSupportButton"]
+      renderingParams:
+        name: "FloatingSupportButton"
+        path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Navigation/FloatingSupportButton"
+        itemId: "{BB1BBA0A-277F-4320-89E2-EB12A30A05C0}"
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{FB31654E-B01F-44CF-B25E-4BEA2A6E699C}"
+          linked: true
+    datasourceFolder:
+      name: "FloatingSupportButtons"
+      path: "/sitecore/content/main/main-website/Data/FloatingSupportButtons"
+      itemId: "{3A7B471F-0EAE-4976-8839-E92FFB24B036}"
+      insertOptionsSet: true
+      exampleItem:
+        name: "Davivienda - Floating Support"
+        itemId: "{B94DBFF8-C4F2-4642-94A2-D337083155C5}"
+    rendering:
+      name: "FloatingSupportButton"
+      path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Navigation/FloatingSupportButton"
+      itemId: "{EB71A834-0ED2-48D5-BD47-480C10AC187A}"
+      componentName: "FloatingSupportButton"
+      datasourceTemplatePath: "/sitecore/templates/Project/fmc-custom-demo/Components/Navigation/FloatingSupportButton"
+      parametersTemplateId: "{BB1BBA0A-277F-4320-89E2-EB12A30A05C0}"
+      componentQuery: ""
+      addFieldEditorButton: "1"
+      registeredInAvailableRenderings: true
+    headlessVariants:
+      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/FloatingSupportButton"
+      containerId: "{4C6642BA-952A-420A-9BB0-5CFC94ECBE00}"
+      variants:
+        - { name: "Default", itemId: "{AFB62353-F82F-4BB6-A577-448BB7B79FFF}" }
+    verification:
+      checkedAt: "2026-09-10T15:02:00Z"
+      passed: ["Datasource template and field types verified", "Datasource folder and populated item verified", "Rendering configuration verified", "Default variant created", "React file and component map updated", "Registered in Available Renderings"]
+      failed: []
+      pendingManual: ["Silent-write __Standard values and __Masters fields"]
+    notes: ["2026-09-10: Planned by approved Davivienda pixel-perfect demo build."]
+
 
 sharedDataTemplates:
   - name: "Person"

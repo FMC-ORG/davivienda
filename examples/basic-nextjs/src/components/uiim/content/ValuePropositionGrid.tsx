@@ -305,3 +305,63 @@ export const Horizontal = ({ fields, params, page }: ValuePropositionGridProps):
     </div>
   );
 };
+
+/* Davivienda variant — compact cards completing the dark app band */
+export const DaviviendaAppBenefits = ({
+  fields,
+  params,
+  page,
+}: ValuePropositionGridProps): JSX.Element => {
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <ValuePropositionGridDefaultComponent />;
+
+  const items = datasource.children?.results ?? [];
+
+  return (
+    <div
+      className={cn("component value-proposition-grid", params.styles)}
+      id={params.RenderingIdentifier}
+    >
+      <section className="bg-[var(--brand-dark)] px-5 pb-16 pt-2 text-[var(--brand-fg)] sm:px-6 lg:pb-20">
+        <div className="mx-auto max-w-[1136px]">
+          {isEditing && <SectionHeader datasource={datasource} isEditing />}
+          <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
+            {items.map((item) => (
+              <article
+                key={item.id}
+                className="min-w-[82vw] snap-center rounded-[var(--brand-card-radius)] bg-[var(--brand-bg)] p-6 md:min-w-0"
+              >
+                {(item.itemIcon?.jsonValue?.value?.src || isEditing) && (
+                  <ContentSdkImage
+                    field={item.itemIcon?.jsonValue}
+                    className="mb-4 h-9 w-9 object-contain"
+                  />
+                )}
+                {(item.itemTitle?.jsonValue?.value || isEditing) && (
+                  <Text
+                    field={item.itemTitle?.jsonValue}
+                    tag="h3"
+                    className="text-lg font-bold leading-snug font-[var(--brand-heading-font)]"
+                  />
+                )}
+                {(item.itemDescription?.jsonValue?.value || isEditing) && (
+                  <ContentSdkRichText
+                    field={item.itemDescription?.jsonValue}
+                    className="mt-3 text-sm leading-6 text-[var(--brand-muted-foreground)]"
+                  />
+                )}
+                {isEditing && (
+                  <ContentSdkLink
+                    field={item.itemLink?.jsonValue}
+                    className="mt-3 inline-flex text-sm text-[var(--brand-primary)]"
+                  />
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};

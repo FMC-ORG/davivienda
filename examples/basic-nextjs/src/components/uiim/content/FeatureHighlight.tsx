@@ -276,3 +276,111 @@ export const IconLeft = ({ fields, params, page }: FeatureHighlightProps): JSX.E
     </div>
   );
 };
+
+/* Davivienda PSE variant — compact information callout */
+export const DaviviendaPseCallout = ({
+  fields,
+  params,
+  page,
+}: FeatureHighlightProps): JSX.Element => {
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <FeatureHighlightDefaultComponent />;
+
+  return (
+    <div
+      className={cn("component feature-highlight", params.styles)}
+      id={params.RenderingIdentifier}
+    >
+      <section className="bg-[var(--brand-muted)] px-5 py-14 sm:px-6 sm:py-20">
+        <div className="mx-auto flex max-w-[1136px] items-center gap-5 rounded-[var(--brand-card-radius)] bg-[var(--brand-bg)] px-6 py-7 sm:px-8">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--brand-muted)] ring-1 ring-[var(--brand-border)]">
+            {fields.FeatureImage?.value?.src || isEditing ? (
+              <ContentSdkImage
+                field={fields.FeatureImage}
+                className="h-6 w-6 object-contain"
+              />
+            ) : (
+              <Text
+                field={fields.EyebrowText}
+                tag="span"
+                className="text-[10px] font-bold text-[var(--brand-fg)]"
+              />
+            )}
+          </div>
+          <div className="min-w-0 flex-1">
+            {(fields.Title?.value || isEditing) && (
+              <Text
+                field={fields.Title}
+                tag="h2"
+                className="text-base font-bold font-[var(--brand-heading-font)] text-[var(--brand-fg)] sm:text-lg"
+              />
+            )}
+            {(fields.Description?.value || isEditing) && (
+              <ContentSdkRichText
+                field={fields.Description}
+                className="mt-2 text-sm leading-6 text-[var(--brand-muted-foreground)]"
+              />
+            )}
+            {(fields.PrimaryLink?.value?.href || isEditing) && (
+              <ContentSdkLink
+                field={fields.PrimaryLink}
+                className="mt-3 inline-flex text-sm font-semibold text-[var(--brand-fg)] hover:text-[var(--brand-primary)]"
+              />
+            )}
+          </div>
+          <span className="text-2xl text-[var(--brand-fg)]" aria-hidden="true">
+            ›
+          </span>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* Davivienda app variant — dark split promotion */
+export const DaviviendaAppPromo = ({
+  fields,
+  params,
+  page,
+}: FeatureHighlightProps): JSX.Element => {
+  const isEditing = page?.mode?.isEditing;
+  if (!fields) return <FeatureHighlightDefaultComponent />;
+
+  return (
+    <div
+      className={cn("component feature-highlight", params.styles)}
+      id={params.RenderingIdentifier}
+    >
+      <section className="relative overflow-hidden bg-[var(--brand-dark)] px-5 pb-8 pt-16 text-[var(--brand-dark-foreground)] sm:px-6 lg:pt-20">
+        <div className="pointer-events-none absolute -left-28 -top-36 h-80 w-80 rounded-full bg-[var(--brand-dark-foreground)] opacity-[0.06]" />
+        <div className="pointer-events-none absolute -right-24 top-10 h-96 w-96 rounded-full bg-[var(--brand-dark-foreground)] opacity-[0.05]" />
+        <div className="relative mx-auto grid max-w-[1136px] items-center gap-8 md:grid-cols-[1.05fr_0.95fr]">
+          <div className="max-w-xl">
+            {(fields.Title?.value || isEditing) && (
+              <Text
+                field={fields.Title}
+                tag="h2"
+                className="text-3xl font-bold leading-tight font-[var(--brand-heading-font)] sm:text-4xl"
+              />
+            )}
+            {(fields.Description?.value || isEditing) && (
+              <ContentSdkRichText
+                field={fields.Description}
+                className="mt-4 text-base leading-7 opacity-90 font-[var(--brand-body-font)]"
+              />
+            )}
+            <CtaButton field={fields.PrimaryLink} isEditing={isEditing} />
+          </div>
+          <div className="relative mx-auto flex min-h-[300px] w-full max-w-[500px] items-end justify-center md:min-h-[390px]">
+            {(fields.FeatureImage?.value?.src || isEditing) && (
+              <ContentSdkImage
+                field={fields.FeatureImage}
+                className="max-h-[410px] w-auto object-contain object-bottom"
+              />
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};

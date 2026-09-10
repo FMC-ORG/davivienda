@@ -86,29 +86,30 @@
    An unlayered :root block above @layer base ALWAYS wins the cascade.
    =================================================================== */
 
-/* CLIENT THEME — uncomment or replace with client values from Phase 4:
+/* CLIENT THEME — Davivienda */
 :root {
-  --brand-primary: #00827f;
+  --brand-primary: #e1111c;
   --brand-primary-foreground: #ffffff;
-  --brand-accent: #00dc00;
-  --brand-accent-foreground: #1a1a1a;
-  --brand-dark: #1a1a2e;
+  --brand-accent: #fdbb11;
+  --brand-accent-foreground: #141f25;
+  --brand-dark: #141f25;
   --brand-dark-foreground: #ffffff;
   --brand-bg: #ffffff;
-  --brand-fg: #1a1a2e;
-  --brand-muted: #f5f5f5;
-  --brand-muted-foreground: #6b7280;
-  --brand-border: #e5e7eb;
-  --brand-header-bg: #1a1a2e;
+  --brand-fg: #1d1d1d;
+  --brand-muted: #f2f3f5;
+  --brand-muted-foreground: #404040;
+  --brand-border: #d9d9d9;
+  --brand-header-bg: #b20a16;
   --brand-header-fg: #ffffff;
-  --brand-footer-bg: #1a1a2e;
-  --brand-footer-fg: #9ca3af;
-  --brand-heading-font: 'Poppins', sans-serif;
+  --brand-footer-bg: #ffffff;
+  --brand-footer-fg: #404040;
+  --brand-feature-purple: #7f26ff;
+  --brand-faq-bg: #f1f2f8;
+  --brand-heading-font: 'Nunito Sans', sans-serif;
   --brand-body-font: 'Open Sans', sans-serif;
-  --brand-button-radius: 0.375rem;
-  --brand-card-radius: 0.75rem;
+  --brand-button-radius: 9999px;
+  --brand-card-radius: 1rem;
 }
-*/
 
 @layer base {
   :root {

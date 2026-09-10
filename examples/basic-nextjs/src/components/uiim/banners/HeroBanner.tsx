@@ -4,6 +4,7 @@ import {
   ImageField,
   LinkField,
   Link as ContentSdkLink,
+  NextImage as ContentSdkImage,
   RichText as ContentSdkRichText,
   Text,
 } from '@sitecore-content-sdk/nextjs';
@@ -318,6 +319,59 @@ export const Minimal = ({ fields, params, page }: HeroBannerProps): JSX.Element 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <PrimaryButton field={fields.PrimaryLink} isEditing={isEditing} />
             <SecondaryButton field={fields.SecondaryLink} isEditing={isEditing} />
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* Davivienda variant — spacious split hero with contained campaign artwork */
+export const DaviviendaHero = ({
+  fields,
+  params,
+  page,
+}: HeroBannerProps): JSX.Element => {
+  const isEditing = page?.mode?.isEditing;
+
+  if (!fields) return <HeroBannerDefaultComponent />;
+
+  return (
+    <div
+      className={cn("component hero-banner", params.styles)}
+      id={params.RenderingIdentifier}
+    >
+      <section className="bg-[var(--brand-bg)] text-[var(--brand-fg)]">
+        <div className="mx-auto grid max-w-[1136px] items-center gap-10 px-5 py-14 md:grid-cols-[0.9fr_1.1fr] md:px-6 md:py-24 lg:gap-16">
+          <div className="order-1 max-w-[520px] space-y-5">
+            {(fields.Title?.value || isEditing) && (
+              <Text
+                field={fields.Title}
+                tag="h1"
+                className="text-[2.5rem] font-bold leading-[1.1] tracking-tight font-[var(--brand-heading-font)] sm:text-5xl lg:text-[3.5rem]"
+              />
+            )}
+            {(fields.Subtitle?.value || isEditing) && (
+              <ContentSdkRichText
+                field={fields.Subtitle}
+                className="max-w-[500px] text-base leading-7 font-[var(--brand-body-font)] text-[var(--brand-muted-foreground)]"
+              />
+            )}
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <PrimaryButton field={fields.PrimaryLink} isEditing={isEditing} />
+              <SecondaryButton
+                field={fields.SecondaryLink}
+                isEditing={isEditing}
+              />
+            </div>
+          </div>
+          <div className="order-2 overflow-hidden rounded-[var(--brand-card-radius)] bg-[var(--brand-muted)]">
+            {(fields.HeroImage?.value?.src || isEditing) && (
+              <ContentSdkImage
+                field={fields.HeroImage}
+                className="aspect-[1.3/1] h-auto w-full object-cover"
+              />
+            )}
           </div>
         </div>
       </section>

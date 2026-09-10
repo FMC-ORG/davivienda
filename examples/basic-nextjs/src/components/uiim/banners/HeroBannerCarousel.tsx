@@ -318,3 +318,111 @@ export const WithThumbnails = ({ fields, params, page }: HeroBannerCarouselProps
     </div>
   );
 };
+
+/* Davivienda variant — shallow campaign artwork with compact counter controls */
+export const DaviviendaCampaignCarousel = ({
+  fields,
+  params,
+  page,
+}: HeroBannerCarouselProps): JSX.Element => {
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  const slides = datasource?.children?.results ?? [];
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const goTo = useCallback(
+    (index: number) => {
+      if (!slides.length) return;
+      setActiveIndex(((index % slides.length) + slides.length) % slides.length);
+    },
+    [slides.length],
+  );
+
+  useEffect(() => {
+    if (isEditing || slides.length <= 1) return;
+    const timer = setInterval(() => goTo(activeIndex + 1), 6000);
+    return () => clearInterval(timer);
+  }, [activeIndex, goTo, isEditing, slides.length]);
+
+  if (!datasource || slides.length === 0)
+    return <HeroBannerCarouselDefaultComponent />;
+
+  return (
+    <div
+      className={cn("component hero-banner-carousel", params.styles)}
+      id={params.RenderingIdentifier}
+    >
+      <section
+        className="bg-[var(--brand-bg)] px-5 py-14 sm:px-6 sm:py-20"
+        aria-label={datasource.title?.jsonValue?.value || "Campaign carousel"}
+      >
+        <div className="mx-auto max-w-[940px]">
+          <div className="overflow-hidden rounded-[var(--brand-card-radius)]">
+            <div
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+            >
+              {slides.map((slide) => (
+                <article
+                  key={slide.id}
+                  className="w-full shrink-0 bg-[var(--brand-muted)]"
+                >
+                  {(slide.slideImage?.jsonValue?.value?.src || isEditing) && (
+                    <ContentSdkImage
+                      field={slide.slideImage?.jsonValue}
+                      className="aspect-[3.16/1] h-auto w-full object-contain"
+                    />
+                  )}
+                  {isEditing && (
+                    <div className="space-y-2 bg-[var(--brand-bg)] p-4 text-[var(--brand-fg)]">
+                      <Text
+                        field={slide.slideTitle?.jsonValue}
+                        tag="h3"
+                        className="font-bold"
+                      />
+                      <ContentSdkRichText
+                        field={slide.slideSubtitle?.jsonValue}
+                        className="text-sm"
+                      />
+                      <PrimaryButton
+                        field={slide.primaryLink?.jsonValue}
+                        isEditing
+                      />
+                      <SecondaryButton
+                        field={slide.secondaryLink?.jsonValue}
+                        isEditing
+                      />
+                    </div>
+                  )}
+                </article>
+              ))}
+            </div>
+          </div>
+          {slides.length > 1 && (
+            <div className="mt-5 flex items-center justify-center gap-3 text-sm text-[var(--brand-fg)]">
+              <button
+                type="button"
+                onClick={() => goTo(activeIndex - 1)}
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--brand-muted)] transition-colors hover:bg-[var(--brand-border)]"
+                aria-label="Previous campaign"
+              >
+                ‹
+              </button>
+              <span className="min-w-10 text-center font-semibold">
+                {activeIndex + 1} / {slides.length}
+              </span>
+              <button
+                type="button"
+                onClick={() => goTo(activeIndex + 1)}
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--brand-primary)] text-[var(--brand-primary-foreground)] transition-opacity hover:opacity-85"
+                aria-label="Next campaign"
+              >
+                ›
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+};

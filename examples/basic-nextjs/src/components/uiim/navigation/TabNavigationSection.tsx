@@ -212,3 +212,57 @@ export const Boxed = ({ fields, params, page }: TabNavigationSectionProps): JSX.
     </div>
   );
 };
+
+/* Davivienda variant — centered FAQ title with compact underlined categories */
+export const DaviviendaFaqTabs = ({
+  fields,
+  params,
+  page,
+}: TabNavigationSectionProps): JSX.Element => {
+  const isEditing = page?.mode?.isEditing;
+  const datasource = fields?.data?.datasource;
+  if (!datasource) return <TabNavigationSectionDefaultComponent />;
+
+  const tabs = datasource.children?.results ?? [];
+
+  return (
+    <div
+      className={cn("component tab-navigation-section", params.styles)}
+      id={params.RenderingIdentifier}
+    >
+      <section className="bg-[var(--brand-faq-bg,var(--brand-muted))] px-5 pb-0 pt-14 sm:px-6 sm:pt-20">
+        <div className="mx-auto max-w-[960px]">
+          {(datasource.title?.jsonValue?.value || isEditing) && (
+            <Text
+              field={datasource.title?.jsonValue}
+              tag="h2"
+              className="mb-9 text-center text-3xl font-bold leading-tight font-[var(--brand-heading-font)] text-[var(--brand-fg)] sm:text-4xl"
+            />
+          )}
+          <div className="overflow-x-auto border-b border-[var(--brand-border)]">
+            <nav
+              className="flex min-w-max items-center gap-8"
+              aria-label="FAQ categories"
+            >
+              {tabs.map((tab, index) => (
+                <ContentSdkLink
+                  key={tab.id}
+                  field={tab.tabLink?.jsonValue}
+                  className={cn(
+                    "relative pb-3 text-sm font-medium text-[var(--brand-muted-foreground)] transition-colors hover:text-[var(--brand-fg)]",
+                    index === 0 && "font-semibold text-[var(--brand-fg)]",
+                  )}
+                >
+                  <Text field={tab.tabLabel?.jsonValue} />
+                  {index === 0 && (
+                    <span className="absolute inset-x-0 bottom-0 h-0.5 bg-[var(--brand-primary)]" />
+                  )}
+                </ContentSdkLink>
+              ))}
+            </nav>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};

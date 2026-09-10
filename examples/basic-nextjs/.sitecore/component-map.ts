@@ -10,10 +10,14 @@ import * as SearchTypeahead from 'src/components/uiim/search/SearchTypeahead';
 import * as SearchResults from 'src/components/uiim/search/SearchResults';
 import * as SearchExperienceV2 from 'src/components/uiim/search/SearchExperienceV2';
 import * as SearchCollection from 'src/components/uiim/search/SearchCollection';
+import * as TwoTierNavigationHeader from 'src/components/uiim/navigation/TwoTierNavigationHeader';
 import * as TabNavigationSection from 'src/components/uiim/navigation/TabNavigationSection';
 import * as SiteFooter from 'src/components/uiim/navigation/SiteFooter';
+import * as ResponsiveMegaFooter from 'src/components/uiim/navigation/ResponsiveMegaFooter';
 import * as NavigationHeader from 'src/components/uiim/navigation/NavigationHeader';
+import * as FloatingSupportButton from 'src/components/uiim/navigation/FloatingSupportButton';
 import * as AnnouncementBar from 'src/components/uiim/navigation/AnnouncementBar';
+import * as ServiceChannelsGrid from 'src/components/uiim/content/ServiceChannelsGrid';
 import * as SmartMedia from 'src/components/uiim/media/SmartMedia';
 import * as ImageGallery from 'src/components/uiim/media/ImageGallery';
 import * as LandingStats from 'src/components/uiim/landing/LandingStats';
@@ -90,10 +94,14 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['SearchResults', { ...SearchResults, componentType: 'client' }],
   ['SearchExperienceV2', { ...SearchExperienceV2, componentType: 'client' }],
   ['SearchCollection', { ...SearchCollection, componentType: 'client' }],
+  ['TwoTierNavigationHeader', { ...TwoTierNavigationHeader, componentType: 'client' }],
   ['TabNavigationSection', { ...TabNavigationSection }],
   ['SiteFooter', { ...SiteFooter }],
+  ['ResponsiveMegaFooter', { ...ResponsiveMegaFooter }],
   ['NavigationHeader', { ...NavigationHeader, componentType: 'client' }],
+  ['FloatingSupportButton', { ...FloatingSupportButton }],
   ['AnnouncementBar', { ...AnnouncementBar }],
+  ['ServiceChannelsGrid', { ...ServiceChannelsGrid }],
   ['SmartMedia', { ...SmartMedia, componentType: 'client' }],
   ['ImageGallery', { ...ImageGallery }],
   ['LandingStats', { ...LandingStats }],

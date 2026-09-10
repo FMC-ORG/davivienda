@@ -1,0 +1,37 @@
+---
+description: Sitecore XM Cloud component development rules
+alwaysApply: false
+globs:
+  - "**/*sitecore*.ts"
+  - "**/*sitecore*.tsx"
+  - "**/content*.ts"
+  - "**/sitecore.config.ts"
+  - "**/proxy.ts"
+  - "src/components/**"
+  - "src/lib/**"
+---
+
+# Sitecore XM Cloud Rules
+
+## For `examples/basic-nextjs` (AI Demo Builder)
+
+All Sitecore rules for the demo builder live in `examples/basic-nextjs/docs/ai/`.
+Read and follow those docs — they override everything in this file.
+
+Key entry points:
+- `docs/ai/rules/01-sitecore-router.md` — classify the task first
+- `docs/ai/reference/sitecore-rules.md` — canonical Sitecore rules reference
+- `docs/ai/skills/shared/react-uiim-guidelines.md` — component patterns
+- `docs/ai/reference/sitecore-marketer-mcp-reference.md` — MCP tool behaviors
+
+## For other starters (article-starter, product-listing, skate-park)
+
+These starters use the standard XM Cloud component patterns:
+
+- SDK: `@sitecore-content-sdk/nextjs` (NOT `@sitecore-jss/sitecore-jss-nextjs`)
+- Props: extend `ComponentProps` from `@/lib/component-props`
+- Fields: use SDK editable helpers (`Text`, `RichText`, `NextImage`, `Link`)
+- Variants: use named exports (`export const Default`, not `export default`)
+- Styling: Tailwind CSS + shadcn/ui from `@/components/ui/*`
+- Edit mode: `page.mode.isEditing` from `useSitecore()` hook
+- Datasource: check `fields?.data?.datasource` existence, use `NoDataFallback` fallback

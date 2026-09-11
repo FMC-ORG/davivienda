@@ -112,3 +112,52 @@ export const Default = ({ params, page }: ComponentProps): JSX.Element => {
     </div>
   );
 };
+
+/* Davivienda — white testimonial panel over a muted banking section */
+export const Davivienda = ({ params, page }: ComponentProps): JSX.Element => {
+  const isEditing = page?.mode?.isEditing;
+  const routeFields = getRouteFields(page);
+  if (!routeFields) return <LandingSocialProofDefaultComponent />;
+
+  const { testimonialQuote, testimonialAuthorName, testimonialAuthorTitle, testimonialAuthorImage, partnerLogosImage } = routeFields;
+  const hasTestimonial = testimonialQuote?.value || testimonialAuthorName?.value || testimonialAuthorTitle?.value || isEditing;
+
+  return (
+    <div className={cn('component landing-social-proof', params.styles)} id={params.RenderingIdentifier}>
+      <section className="bg-[var(--brand-muted)] px-5 py-16 sm:px-6 md:py-24" data-testid="landing-social-proof">
+        <div className="mx-auto max-w-[960px]">
+          {hasTestimonial && (
+            <figure className="rounded-[var(--brand-card-radius)] bg-[var(--brand-bg)] p-8 ring-1 ring-[var(--brand-border)] sm:p-12">
+              {(testimonialQuote?.value || isEditing) && (
+                <blockquote className="text-2xl font-bold leading-relaxed font-[var(--brand-heading-font)] text-[var(--brand-fg)] md:text-3xl">
+                  <span className="text-[var(--brand-primary)]">“</span>
+                  <ContentSdkRichText field={testimonialQuote} />
+                </blockquote>
+              )}
+              <figcaption className="mt-7 flex items-center gap-4">
+                {(testimonialAuthorImage?.value?.src || isEditing) && (
+                  <div className="h-14 w-14 overflow-hidden rounded-full bg-[var(--brand-muted)]">
+                    <ContentSdkImage field={testimonialAuthorImage} className="h-full w-full object-cover" width={56} height={56} />
+                  </div>
+                )}
+                <div>
+                  {(testimonialAuthorName?.value || isEditing) && (
+                    <Text field={testimonialAuthorName} tag="p" className="font-bold text-[var(--brand-fg)]" />
+                  )}
+                  {(testimonialAuthorTitle?.value || isEditing) && (
+                    <Text field={testimonialAuthorTitle} tag="p" className="text-sm text-[var(--brand-muted-foreground)]" />
+                  )}
+                </div>
+              </figcaption>
+            </figure>
+          )}
+          {(partnerLogosImage?.value?.src || isEditing) && (
+            <div className="mt-10 rounded-[var(--brand-card-radius)] bg-[var(--brand-bg)] px-8 py-6">
+              <ContentSdkImage field={partnerLogosImage} className="mx-auto h-auto max-w-full opacity-70" />
+            </div>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+};

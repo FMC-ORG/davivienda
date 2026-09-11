@@ -117,3 +117,46 @@ export const Default = ({ params, page }: ComponentProps): JSX.Element => {
     </div>
   );
 };
+
+/* Davivienda — light banking cards with red icon accents */
+export const Davivienda = ({ params, page }: ComponentProps): JSX.Element => {
+  const isEditing = page?.mode?.isEditing;
+  const routeFields = getRouteFields(page);
+  if (!routeFields) return <LandingFeaturesDefaultComponent />;
+
+  const features = [
+    { iconName: routeFields.feature1IconName, title: routeFields.feature1Title, description: routeFields.feature1Description },
+    { iconName: routeFields.feature2IconName, title: routeFields.feature2Title, description: routeFields.feature2Description },
+    { iconName: routeFields.feature3IconName, title: routeFields.feature3Title, description: routeFields.feature3Description },
+  ];
+
+  return (
+    <div className={cn('component landing-features', params.styles)} id={params.RenderingIdentifier}>
+      <section className="bg-[var(--brand-muted)] px-5 py-16 sm:px-6 md:py-24" data-testid="landing-features">
+        <div className="mx-auto grid max-w-[1136px] gap-5 md:grid-cols-3">
+          {features.map((feature, index) => {
+            const iconKey = feature.iconName?.value;
+            const hasContent = iconKey || feature.title?.value || feature.description?.value;
+            if (!hasContent && !isEditing) return null;
+            const Icon = iconKey && (LucideIcons as Record<string, unknown>)[iconKey]
+              ? ((LucideIcons as unknown) as Record<string, React.ComponentType<{ className?: string }>>)[iconKey]
+              : Sparkles;
+            return (
+              <article key={index} className="rounded-[var(--brand-card-radius)] bg-[var(--brand-bg)] p-7 ring-1 ring-[var(--brand-border)] transition-transform hover:-translate-y-1">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--brand-primary)] text-[var(--brand-primary-foreground)]">
+                  <Icon className="h-6 w-6" />
+                </div>
+                {(feature.title?.value || isEditing) && (
+                  <Text field={feature.title} tag="h3" className="text-xl font-bold font-[var(--brand-heading-font)] text-[var(--brand-fg)]" />
+                )}
+                {(feature.description?.value || isEditing) && (
+                  <ContentSdkRichText field={feature.description} className="mt-3 text-sm leading-6 text-[var(--brand-muted-foreground)]" />
+                )}
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    </div>
+  );
+};

@@ -188,6 +188,7 @@ pageTemplates:
           - { name: "Default", description: "Centered eyebrow + headline + subhead + dual CTAs above hero image/video. Conventional above-the-fold." }
           - { name: "SplitImage", description: "Two-column: text left, hero image/video right. Higher engagement for known-account ABM (split feels more personal)." }
           - { name: "Minimal", description: "Text-only hero, no media. Use for retargeting where the visitor has already seen the product." }
+          - { name: "Davivienda", description: "Bank-branded split hero with red eyebrow, pill CTAs, rounded media, and the Davivienda theme tokens." }
 
       - id: landing-features
         name: "LandingFeatures"
@@ -196,6 +197,7 @@ pageTemplates:
         routeFieldsUsed: ["feature1IconName", "feature1Title", "feature1Description", "feature2IconName", "feature2Title", "feature2Description", "feature3IconName", "feature3Title", "feature3Description"]
         variants:
           - { name: "Default", description: "3-up card grid. Icon + title + description per card. Responsive: 3 cols desktop, 1 col mobile." }
+          - { name: "Davivienda", description: "Muted banking section with white rounded cards and red circular icon accents." }
 
       - id: landing-stats
         name: "LandingStats"
@@ -204,6 +206,7 @@ pageTemplates:
         routeFieldsUsed: ["stat1Number", "stat1Label", "stat2Number", "stat2Label", "stat3Number", "stat3Label"]
         variants:
           - { name: "Default", description: "3-up stat tiles. Large number + label below. Responsive: 3 cols desktop, stacked mobile." }
+          - { name: "Davivienda", description: "Dark banking band with compact white stat cards and red numbers." }
 
       - id: landing-social-proof
         name: "LandingSocialProof"
@@ -212,6 +215,7 @@ pageTemplates:
         routeFieldsUsed: ["testimonialQuote", "testimonialAuthorName", "testimonialAuthorTitle", "testimonialAuthorImage", "partnerLogosImage"]
         variants:
           - { name: "Default", description: "Testimonial card (quote + author block) above the partner logo strip image. Logo strip hidden when partnerLogosImage is empty (unless editing)." }
+          - { name: "Davivienda", description: "White testimonial panel on a muted section with red quote accent and rounded logo band." }
 
       - id: landing-faq
         name: "LandingFAQ"
@@ -220,6 +224,7 @@ pageTemplates:
         routeFieldsUsed: ["faq1Question", "faq1Answer", "faq2Question", "faq2Answer", "faq3Question", "faq3Answer", "faq4Question", "faq4Answer", "faq5Question", "faq5Answer"]
         variants:
           - { name: "Default", description: "shadcn Accordion, 5 items, all collapsed by default. Empty Q/A pairs hidden in non-editing mode." }
+          - { name: "Davivienda", description: "Muted FAQ section with a white rounded accordion card and red interaction accents." }
 
       - id: landing-final-cta
         name: "LandingFinalCTA"
@@ -228,6 +233,7 @@ pageTemplates:
         routeFieldsUsed: ["finalCtaHeadline", "finalCtaSubhead", "finalCtaButton"]
         variants:
           - { name: "Default", description: "Centered headline + subhead + single button on a contrast background band. Full-width." }
+          - { name: "Davivienda", description: "Red-gradient conversion band with white copy and white pill CTA." }
 
     partialDesign:
       name: "Landing Page Layout"

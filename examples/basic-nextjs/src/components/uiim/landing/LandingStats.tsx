@@ -89,3 +89,38 @@ export const Default = ({ params, page }: ComponentProps): JSX.Element => {
     </div>
   );
 };
+
+/* Davivienda — dark banking band with compact white stat cards */
+export const Davivienda = ({ params, page }: ComponentProps): JSX.Element => {
+  const isEditing = page?.mode?.isEditing;
+  const routeFields = getRouteFields(page);
+  if (!routeFields) return <LandingStatsDefaultComponent />;
+
+  const stats = [
+    { number: routeFields.stat1Number, label: routeFields.stat1Label },
+    { number: routeFields.stat2Number, label: routeFields.stat2Label },
+    { number: routeFields.stat3Number, label: routeFields.stat3Label },
+  ];
+
+  return (
+    <div className={cn('component landing-stats', params.styles)} id={params.RenderingIdentifier}>
+      <section className="bg-[var(--brand-dark)] px-5 py-14 sm:px-6 md:py-20" data-testid="landing-stats">
+        <div className="mx-auto grid max-w-[1136px] gap-4 md:grid-cols-3">
+          {stats.map((stat, index) => {
+            if (!stat.number?.value && !stat.label?.value && !isEditing) return null;
+            return (
+              <article key={index} className="rounded-[var(--brand-card-radius)] bg-[var(--brand-bg)] p-7 text-left">
+                {(stat.number?.value || isEditing) && (
+                  <Text field={stat.number} tag="p" className="text-4xl font-bold tracking-tight text-[var(--brand-primary)] sm:text-5xl" />
+                )}
+                {(stat.label?.value || isEditing) && (
+                  <Text field={stat.label} tag="p" className="mt-2 text-sm font-bold text-[var(--brand-fg)]" />
+                )}
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    </div>
+  );
+};

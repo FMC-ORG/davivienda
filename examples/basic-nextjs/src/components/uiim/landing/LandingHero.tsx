@@ -77,7 +77,7 @@ function CtaPair({
   primary?: LinkField;
   secondary?: LinkField;
   isEditing?: boolean;
-  variant: 'default' | 'minimal' | 'split';
+  variant: 'default' | 'minimal' | 'split' | 'davivienda';
 }) {
   const showPrimary = primary?.value?.href || isEditing;
   const showSecondary = secondary?.value?.href || isEditing;
@@ -86,12 +86,16 @@ function CtaPair({
   const primaryClasses =
     variant === 'default'
       ? 'inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-base font-semibold text-gray-900 transition hover:bg-gray-100'
-      : 'inline-flex items-center justify-center rounded-md bg-gray-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-gray-800';
+      : variant === 'davivienda'
+        ? 'inline-flex items-center justify-center rounded-[var(--brand-button-radius)] bg-[var(--brand-primary)] px-7 py-3 text-base font-bold text-[var(--brand-primary-foreground)] transition-opacity hover:opacity-90'
+        : 'inline-flex items-center justify-center rounded-md bg-gray-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-gray-800';
 
   const secondaryClasses =
     variant === 'default'
       ? 'inline-flex items-center justify-center rounded-md border border-white/40 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/10'
-      : 'inline-flex items-center justify-center rounded-md border border-gray-300 px-6 py-3 text-base font-semibold text-gray-900 transition hover:bg-gray-50';
+      : variant === 'davivienda'
+        ? 'inline-flex items-center justify-center rounded-[var(--brand-button-radius)] border border-[var(--brand-primary)] px-7 py-3 text-base font-bold text-[var(--brand-primary)] transition-colors hover:bg-[var(--brand-muted)]'
+        : 'inline-flex items-center justify-center rounded-md border border-gray-300 px-6 py-3 text-base font-semibold text-gray-900 transition hover:bg-gray-50';
 
   return (
     <div className="mt-8 flex flex-wrap items-center gap-4" data-testid="hero-ctas">
@@ -293,6 +297,42 @@ export const Minimal = ({ params, page }: ComponentProps): JSX.Element => {
               variant="minimal"
             />
           </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* Davivienda — bright split hero with pill CTAs and rounded media */
+export const Davivienda = ({ params, page }: ComponentProps): JSX.Element => {
+  const isEditing = page?.mode?.isEditing;
+  const routeFields = getRouteFields(page);
+  if (!routeFields) return <LandingHeroDefaultComponent />;
+
+  const { heroEyebrow, heroHeadline, heroSubhead, heroPrimaryCta, heroSecondaryCta, heroImage, heroVideo } = routeFields;
+  const hasMedia = heroVideo?.value?.href || heroImage?.value?.src || isEditing;
+
+  return (
+    <div className={cn('component landing-hero', params.styles)} id={params.RenderingIdentifier}>
+      <section className="bg-[var(--brand-bg)] text-[var(--brand-fg)]" data-testid="landing-hero">
+        <div className="mx-auto grid max-w-[1136px] items-center gap-10 px-5 py-16 md:grid-cols-[0.95fr_1.05fr] md:px-6 md:py-24 lg:gap-16">
+          <div>
+            {(heroEyebrow?.value || isEditing) && (
+              <Text field={heroEyebrow} tag="p" className="mb-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-primary)]" />
+            )}
+            {(heroHeadline?.value || isEditing) && (
+              <Text field={heroHeadline} tag="h1" className="text-4xl font-bold leading-[1.08] tracking-tight font-[var(--brand-heading-font)] sm:text-5xl lg:text-[3.5rem]" />
+            )}
+            {(heroSubhead?.value || isEditing) && (
+              <Text field={heroSubhead} tag="p" className="mt-5 max-w-xl text-lg leading-7 text-[var(--brand-muted-foreground)]" />
+            )}
+            <CtaPair primary={heroPrimaryCta} secondary={heroSecondaryCta} isEditing={isEditing} variant="davivienda" />
+          </div>
+          {hasMedia && (
+            <div className="aspect-[4/3] overflow-hidden rounded-[var(--brand-card-radius)] bg-[var(--brand-muted)]">
+              <HeroMedia image={heroImage} video={heroVideo} isEditing={isEditing} />
+            </div>
+          )}
         </div>
       </section>
     </div>

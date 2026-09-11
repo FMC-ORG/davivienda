@@ -1,5 +1,5 @@
 generatedAt: "2026-03-20T09:00:00Z"
-lastUpdatedAt: "2026-09-10T16:38:27Z"
+lastUpdatedAt: "2026-09-10T19:38:27Z"
 lastUpdatedBy: "pi"
 
 project:
@@ -2381,11 +2381,11 @@ components:
     category: "Landing"
     status: "complete"
     createdAt: "2026-06-09T00:00:00Z"
-    updatedAt: "2026-06-09T00:00:00Z"
+    updatedAt: "2026-09-10T16:45:00Z"
     react:
       filePath: "src/components/uiim/landing/LandingHero.tsx"
       componentMapKey: "LandingHero"
-      variants: ["Default", "SplitImage", "Minimal"]
+      variants: ["Default", "SplitImage", "Minimal", "Davivienda"]
     templates:
       renderingParams:
         name: "LandingHero"
@@ -2407,6 +2407,7 @@ components:
         - { name: "Default", itemId: "{D1B9E599-F9C5-416F-A204-16F8EBC1E10C}" }
         - { name: "SplitImage", itemId: "{E000909A-01DA-498C-BAB3-54EAC6E2C89F}" }
         - { name: "Minimal", itemId: "{52F4AECD-818D-4A1A-8CC5-DFDCE5F5C928}" }
+        - { name: "Davivienda", itemId: "{34DB4C10-4757-499B-B674-7BC539C34DC2}" }
     verification:
       renderingExists: passed
       componentNamePascalCase: passed
@@ -2419,17 +2420,18 @@ components:
       componentMapUpdated: passed
     notes:
       - "2026-06-09: Created LandingHero (3 variants — Default, SplitImage, Minimal). Renders heroVideo if set else heroImage. ABM swap surface."
+      - "2026-09-10: Added Davivienda variant with split white layout, rounded media, red eyebrow, and pill CTAs."
 
   - name: "LandingFeatures"
     kind: "context-only"
     category: "Landing"
     status: "complete"
     createdAt: "2026-06-09T00:00:00Z"
-    updatedAt: "2026-06-09T00:00:00Z"
+    updatedAt: "2026-09-10T16:45:00Z"
     react:
       filePath: "src/components/uiim/landing/LandingFeatures.tsx"
       componentMapKey: "LandingFeatures"
-      variants: ["Default"]
+      variants: ["Default", "Davivienda"]
     templates:
       renderingParams:
         name: "LandingFeatures"
@@ -2449,6 +2451,7 @@ components:
       containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingFeatures"
       definitions:
         - { name: "Default", itemId: "{31A214D5-7824-476C-8C63-4FB5F942DD28}" }
+        - { name: "Davivienda", itemId: "{4053AFBC-C07F-41B2-B97A-EC02BDE909B3}" }
     verification:
       renderingExists: passed
       componentNamePascalCase: passed
@@ -2458,17 +2461,18 @@ components:
       componentMapUpdated: passed
     notes:
       - "2026-06-09: Created. 3 fixed feature slots. Icons via lucide-react dynamic lookup (PascalCase icon name strings → React component)."
+      - "2026-09-10: Added Davivienda variant with muted section, white rounded cards, and red icon circles."
 
   - name: "LandingStats"
     kind: "context-only"
     category: "Landing"
     status: "complete"
     createdAt: "2026-06-09T00:00:00Z"
-    updatedAt: "2026-06-09T00:00:00Z"
+    updatedAt: "2026-09-10T16:45:00Z"
     react:
       filePath: "src/components/uiim/landing/LandingStats.tsx"
       componentMapKey: "LandingStats"
-      variants: ["Default"]
+      variants: ["Default", "Davivienda"]
     templates:
       renderingParams:
         name: "LandingStats"
@@ -2488,6 +2492,7 @@ components:
       containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingStats"
       definitions:
         - { name: "Default", itemId: "{2623EBAE-BF3D-471A-8E7D-176BCF6E4BE6}" }
+        - { name: "Davivienda", itemId: "{4F5A76B7-6078-4C7D-BEE8-D4B4D8BB5A3E}" }
     verification:
       renderingExists: passed
       componentNamePascalCase: passed
@@ -2497,17 +2502,18 @@ components:
       componentMapUpdated: passed
     notes:
       - "2026-06-09: Created. 3 fixed stat tiles. Validation regex enforces 8-char limit on numbers."
+      - "2026-09-10: Added Davivienda variant with a dark band and compact white stat cards."
 
   - name: "LandingSocialProof"
     kind: "context-only"
     category: "Landing"
     status: "complete"
     createdAt: "2026-06-09T00:00:00Z"
-    updatedAt: "2026-06-09T00:00:00Z"
+    updatedAt: "2026-09-10T16:45:00Z"
     react:
       filePath: "src/components/uiim/landing/LandingSocialProof.tsx"
       componentMapKey: "LandingSocialProof"
-      variants: ["Default"]
+      variants: ["Default", "Davivienda"]
     templates:
       renderingParams:
         name: "LandingSocialProof"
@@ -2527,6 +2533,7 @@ components:
       containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingSocialProof"
       definitions:
         - { name: "Default", itemId: "{8ED8A4F7-10C3-4867-AC0E-B3F79BECC356}" }
+        - { name: "Davivienda", itemId: "{DD0ED262-12F8-4747-AADF-43173A0D09BE}" }
     verification:
       renderingExists: passed
       componentNamePascalCase: passed
@@ -2536,18 +2543,19 @@ components:
       componentMapUpdated: passed
     notes:
       - "2026-06-09: Created. Single inline testimonial + composite logo strip image (no Treelist)."
+      - "2026-09-10: Added Davivienda variant with a white testimonial panel, red quote accent, and muted logo band."
 
   - name: "LandingFAQ"
     kind: "context-only"
     category: "Landing"
     status: "complete"
     createdAt: "2026-06-09T00:00:00Z"
-    updatedAt: "2026-06-09T00:00:00Z"
+    updatedAt: "2026-09-10T16:45:00Z"
     react:
       filePath: "src/components/uiim/landing/LandingFAQ.tsx"
       componentMapKey: "LandingFAQ"
       componentType: "client"
-      variants: ["Default"]
+      variants: ["Default", "Davivienda"]
     templates:
       renderingParams:
         name: "LandingFAQ"
@@ -2567,6 +2575,7 @@ components:
       containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingFAQ"
       definitions:
         - { name: "Default", itemId: "{DCA2DB12-8D54-4AD6-8D43-082683AFA518}" }
+        - { name: "Davivienda", itemId: "{DE84D101-BAB1-4448-AF7F-E70C2A97E26C}" }
     verification:
       renderingExists: passed
       componentNamePascalCase: passed
@@ -2576,17 +2585,18 @@ components:
       componentMapUpdated: passed
     notes:
       - "2026-06-09: Created. 5 fixed Q/A pairs. Custom accordion (useState) — shadcn does not ship an Accordion primitive in this repo. Marked componentType: client."
+      - "2026-09-10: Added Davivienda variant with muted background, white rounded accordion, and red chevrons."
 
   - name: "LandingFinalCTA"
     kind: "context-only"
     category: "Landing"
     status: "complete"
     createdAt: "2026-06-09T00:00:00Z"
-    updatedAt: "2026-06-09T00:00:00Z"
+    updatedAt: "2026-09-10T16:45:00Z"
     react:
       filePath: "src/components/uiim/landing/LandingFinalCTA.tsx"
       componentMapKey: "LandingFinalCTA"
-      variants: ["Default"]
+      variants: ["Default", "Davivienda"]
     templates:
       renderingParams:
         name: "LandingFinalCTA"
@@ -2606,6 +2616,7 @@ components:
       containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingFinalCTA"
       definitions:
         - { name: "Default", itemId: "{2FFE0507-9D6D-4D93-BFFE-43504C63D10C}" }
+        - { name: "Davivienda", itemId: "{D78073D9-A1AF-4F3E-AE28-EF70EB322151}" }
     verification:
       renderingExists: passed
       componentNamePascalCase: passed
@@ -2615,6 +2626,7 @@ components:
       componentMapUpdated: passed
     notes:
       - "2026-06-09: Created. Closing CTA band on dark background."
+      - "2026-09-10: Added Davivienda variant with a red gradient band and white pill CTA."
 
   - name: "TwoTierNavigationHeader"
     kind: "list"

@@ -71,3 +71,36 @@ export const Default = ({ params, page }: ComponentProps): JSX.Element => {
     </div>
   );
 };
+
+/* Davivienda — brand-red conversion band with a white pill CTA */
+export const Davivienda = ({ params, page }: ComponentProps): JSX.Element => {
+  const isEditing = page?.mode?.isEditing;
+  const routeFields = getRouteFields(page);
+  if (!routeFields) return <LandingFinalCTADefaultComponent />;
+
+  const { finalCtaHeadline, finalCtaSubhead, finalCtaButton } = routeFields;
+
+  return (
+    <div className={cn('component landing-final-cta', params.styles)} id={params.RenderingIdentifier}>
+      <section
+        className="px-5 py-16 text-[var(--brand-primary-foreground)] sm:px-6 md:py-24"
+        style={{ background: 'linear-gradient(90deg, var(--brand-header-bg), var(--brand-primary))' }}
+        data-testid="landing-final-cta"
+      >
+        <div className="mx-auto max-w-[760px] text-center">
+          {(finalCtaHeadline?.value || isEditing) && (
+            <Text field={finalCtaHeadline} tag="h2" className="text-3xl font-bold leading-tight font-[var(--brand-heading-font)] md:text-4xl lg:text-5xl" />
+          )}
+          {(finalCtaSubhead?.value || isEditing) && (
+            <ContentSdkRichText field={finalCtaSubhead} className="mx-auto mt-5 max-w-xl text-lg leading-7 opacity-90" />
+          )}
+          {(finalCtaButton?.value?.href || isEditing) && finalCtaButton && (
+            <div className="mt-8">
+              <ContentSdkLink field={finalCtaButton} className="inline-flex items-center justify-center rounded-[var(--brand-button-radius)] bg-[var(--brand-bg)] px-8 py-3.5 text-base font-bold text-[var(--brand-primary)] transition-opacity hover:opacity-90" />
+            </div>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+};
